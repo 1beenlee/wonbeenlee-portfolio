@@ -1,6 +1,6 @@
 export const siteName = "Wonbeen Lee Portfolio";
 
-export const fallbackSiteUrl = "https://wonbeen-portfolio.vercel.app";
+export const fallbackSiteUrl = "https://wonbeenlee-portfolio.vercel.app";
 
 export const assetPaths = {
   resume: "/resume/wonbeen-lee-resume.pdf",

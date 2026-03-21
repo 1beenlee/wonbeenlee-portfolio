@@ -70,7 +70,7 @@ The current file is already wired to the live CTA buttons. Replace it only with 
 Canonical and Open Graph URLs are built from `NEXT_PUBLIC_SITE_URL`.
 
 - If `NEXT_PUBLIC_SITE_URL` is set, the app uses that value.
-- If it is not set, the site falls back to `https://wonbeen-portfolio.vercel.app`.
+- If it is not set, the site falls back to `https://wonbeenlee-portfolio.vercel.app`.
 
 Before production launch, set the final domain in your deployment environment.
 
@@ -97,6 +97,10 @@ Recommended primary deployment target.
 3. Framework preset: `Next.js`
 4. Build command: default Vercel build or `npm.cmd run build`
 5. Set `NEXT_PUBLIC_SITE_URL` to the final production URL.
+
+Current default deployment alias:
+
+`https://wonbeenlee-portfolio.vercel.app`
 
 ### Cloudflare Pages
 
