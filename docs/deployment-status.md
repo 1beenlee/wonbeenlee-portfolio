@@ -2,7 +2,7 @@
 
 ## Current readiness
 
-Status: ready for public deployment and initial publishing.
+Status: deployed, publicly reachable, and ready for first real sharing.
 
 Validated locally:
 
@@ -26,18 +26,22 @@ Confirmed implementation state:
 - Updated fallback site URL to the actual Vercel project alias
 - Pushed the codebase to `https://github.com/1beenlee/wonbeenlee-portfolio`
 - Created the Vercel project `wonbeenlee-portfolio`
-- Completed the first production deployment
+- Set the Vercel project framework to `Next.js`
+- Removed Vercel deployment protection that was blocking the default `vercel.app` domain
+- Completed a public production deployment
 - Added project environment variable `NEXT_PUBLIC_SITE_URL`
+- Verified the live production URL responds publicly
 
 ## Live deployment
 
 - Production URL: `https://wonbeenlee-portfolio.vercel.app`
 - Deployment inspect URL:
-  - `https://vercel.com/wonbeen-lees-projects/wonbeenlee-portfolio/8WwCGn56U5KqhFsXVWoALMrmQjir`
+  - `https://vercel.com/wonbeen-lees-projects/wonbeenlee-portfolio/D5FXTWAXpTboCbbN29DyYnQWycoL`
 
 ## Still manual
 
 - Connect the GitHub repository to the Vercel project if you want automatic deploys on push.
+  - The site is deployed and live now, but Git-based auto-deploy is not yet linked.
 - Replace placeholder brand assets when final versions are ready:
   - `public/favicon.svg`
   - `public/og-image.svg`
