@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f6f3"/>
+  <circle cx="1020" cy="120" r="220" fill="#d9eeeb"/>
+  <circle cx="160" cy="540" r="160" fill="#ece3d5"/>
+  <rect x="70" y="60" width="1060" height="510" rx="36" fill="#ffffff" stroke="#d6dde5"/>
+  <text x="120" y="210" fill="#0f766e" font-size="26" font-family="Arial, sans-serif" letter-spacing="4">WONBEEN LEE</text>
+  <text x="120" y="300" fill="#102033" font-size="60" font-family="Arial, sans-serif" font-weight="700">Global Product Manager</text>
+  <text x="120" y="376" fill="#334155" font-size="34" font-family="Arial, sans-serif">AI-enabled B2B SaaS · Product Ops · SRM/S2P</text>
+  <text x="120" y="462" fill="#475569" font-size="28" font-family="Arial, sans-serif">Portfolio preview placeholder for Open Graph sharing</text>
+</svg>

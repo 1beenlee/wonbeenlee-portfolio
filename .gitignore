@@ -1,0 +1,15 @@
+.next
+node_modules
+out
+coverage
+*.log
+*.tsbuildinfo
+.vercel
+source/
+_Worklog/
+Archive/
+.env
+.env.local
+.env.*.local
+codex_master_prompt.md
+.eslintrc.json
