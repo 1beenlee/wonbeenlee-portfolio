@@ -283,7 +283,8 @@ export const siteJa: SiteContent = {
     ],
     resumeSectionLabels: {
       experience: "経験",
-      educationAwards: "学歴・受賞",
+      education: "学歴",
+      awards: "受賞",
       languages: "言語"
     }
   }

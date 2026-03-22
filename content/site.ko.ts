@@ -283,7 +283,8 @@ export const siteKo: SiteContent = {
     ],
     resumeSectionLabels: {
       experience: "경력",
-      educationAwards: "학력·수상",
+      education: "학력",
+      awards: "수상",
       languages: "언어"
     }
   }

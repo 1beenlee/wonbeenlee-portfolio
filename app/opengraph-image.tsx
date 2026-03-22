@@ -19,7 +19,7 @@ export default function OpenGraphImage() {
           overflow: "hidden",
           background: "linear-gradient(180deg, #fcfcfc 0%, #f3f6f8 100%)",
           color: "#1a202c",
-          padding: "64px 70px"
+          padding: "60px 68px"
         }}
       >
         <div
@@ -30,7 +30,7 @@ export default function OpenGraphImage() {
             width: 360,
             height: 360,
             borderRadius: "999px",
-            background: "rgba(181, 201, 214, 0.28)"
+            background: "rgba(181, 201, 214, 0.22)"
           }}
         />
         <div
@@ -41,7 +41,7 @@ export default function OpenGraphImage() {
             width: 280,
             height: 280,
             borderRadius: "999px",
-            background: "rgba(217, 198, 160, 0.24)"
+            background: "rgba(217, 198, 160, 0.2)"
           }}
         />
         <div
@@ -61,7 +61,7 @@ export default function OpenGraphImage() {
             borderRadius: 32,
             background: "rgba(255,255,255,0.76)",
             boxShadow: "0 24px 60px rgba(15, 23, 42, 0.08)",
-            padding: "56px 58px",
+            padding: "52px 54px",
             zIndex: 1
           }}
         >
@@ -69,16 +69,17 @@ export default function OpenGraphImage() {
             style={{
               display: "flex",
               flexDirection: "column",
-              gap: 24
+              gap: 18,
+              maxWidth: 820
             }}
           >
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: 14,
-                fontSize: 22,
-                letterSpacing: "0.34em",
+                gap: 12,
+                fontSize: 18,
+                letterSpacing: "0.28em",
                 textTransform: "uppercase",
                 color: "#52606d"
               }}
@@ -96,44 +97,47 @@ export default function OpenGraphImage() {
             <div
               style={{
                 fontFamily: "Georgia, serif",
-                fontSize: 78,
-                lineHeight: 1.03,
+                fontSize: 62,
+                lineHeight: 1.02,
                 letterSpacing: "-0.045em",
-                maxWidth: 820
+                maxWidth: 720
               }}
             >
-              Global Product Manager building calm, scalable systems for complex enterprise workflows.
+              AI-enabled B2B SaaS for complex enterprise workflows.
             </div>
             <div
               style={{
                 display: "flex",
-                fontSize: 30,
-                lineHeight: 1.45,
+                fontSize: 22,
+                lineHeight: 1.35,
                 color: "#475569",
-                maxWidth: 820
+                maxWidth: 560
               }}
             >
-              AI-enabled B2B SaaS · Workflow Design · Product Ops · SRM/S2P
+              Workflow Design / Product Ops / SRM-S2P
             </div>
           </div>
           <div
             style={{
               display: "flex",
               justifyContent: "space-between",
-              alignItems: "flex-end"
+              alignItems: "flex-end",
+              borderTop: "1px solid rgba(148, 163, 184, 0.18)",
+              paddingTop: 24
             }}
           >
             <div
               style={{
                 display: "flex",
                 flexDirection: "column",
-                gap: 10
+                gap: 8,
+                maxWidth: 520
               }}
             >
               <div
                 style={{
                   fontFamily: "Georgia, serif",
-                  fontSize: 38,
+                  fontSize: 32,
                   lineHeight: 1.1
                 }}
               >
@@ -141,11 +145,12 @@ export default function OpenGraphImage() {
               </div>
               <div
                 style={{
-                  fontSize: 22,
+                  fontSize: 18,
+                  lineHeight: 1.35,
                   color: "#52606d"
                 }}
               >
-                Global Product Manager at emro · Tokyo, Japan
+                Global Product Manager at emro / Tokyo, Japan
               </div>
             </div>
             <div

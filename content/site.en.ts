@@ -283,7 +283,8 @@ export const siteEn: SiteContent = {
     ],
     resumeSectionLabels: {
       experience: "Experience",
-      educationAwards: "Education & Awards",
+      education: "Education",
+      awards: "Awards",
       languages: "Languages"
     }
   }

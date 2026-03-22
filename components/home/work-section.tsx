@@ -2,11 +2,12 @@ import type { SiteContent } from "@/lib/types";
 
 import { homeTokens } from "@/components/home/design-tokens";
 import { SectionHeader } from "@/components/home/section-header";
+import { getDisplayFontClass } from "@/lib/locale-typography";
 
 export function WorkSection({ content }: { content: SiteContent }) {
   return (
     <section id="work" className={homeTokens.sectionSpacing}>
-      <SectionHeader title={content.work.title} intro={content.work.intro} />
+      <SectionHeader title={content.work.title} intro={content.work.intro} locale={content.locale} />
       <div className="mt-12 space-y-10">
         {content.work.cases.map((entry, index) => (
           <article
@@ -17,7 +18,7 @@ export function WorkSection({ content }: { content: SiteContent }) {
               <p className={homeTokens.tag}>
                 {String(index + 1).padStart(2, "0")} / {content.work.title}
               </p>
-              <h3 className="mt-4 max-w-xl font-display text-[2.1rem] leading-tight text-ink md:text-[2.5rem]">
+              <h3 className={`mt-4 max-w-xl text-[2.1rem] leading-tight text-ink md:text-[2.5rem] ${getDisplayFontClass(content.locale)}`}>
                 {entry.title}
               </h3>
               <div className="mt-8 rounded-[24px] bg-panel p-6">

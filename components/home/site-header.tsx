@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { homeTokens } from "@/components/home/design-tokens";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { getDisplayFontClass } from "@/lib/locale-typography";
 import type { SiteContent } from "@/lib/types";
 
 export function SiteHeader({ content }: { content: SiteContent }) {
@@ -10,7 +11,7 @@ export function SiteHeader({ content }: { content: SiteContent }) {
       <div className="grid items-center gap-x-3 gap-y-2 lg:flex lg:items-center lg:justify-between lg:gap-6">
         <Link
           href={`/${content.locale}`}
-          className="col-start-1 row-start-1 font-display text-lg font-semibold tracking-tight text-ink sm:text-[1.15rem] lg:text-xl"
+          className={`col-start-1 row-start-1 text-lg font-semibold tracking-tight text-ink sm:text-[1.15rem] lg:text-xl ${getDisplayFontClass(content.locale)}`}
         >
           Wonbeen Lee
         </Link>

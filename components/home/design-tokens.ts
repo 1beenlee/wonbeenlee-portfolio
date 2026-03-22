@@ -16,7 +16,7 @@ export const homeTokens = {
     "sticky top-2 z-20 rounded-[22px] bg-white/76 px-3 py-2 shadow-[0_10px_26px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:px-4 sm:py-2.5 lg:top-4 lg:rounded-full lg:px-5 lg:py-3 lg:shadow-float",
   metaLabel: "font-label text-[11px] uppercase tracking-[0.22em] text-slate-500",
   tag: "font-label text-[10px] uppercase tracking-[0.3em] text-slate-500",
-  sectionTitle: "font-display text-4xl tracking-tight text-ink md:text-5xl",
+  sectionTitle: "text-4xl tracking-tight text-ink md:text-5xl",
   bodyLarge: "text-lg leading-8 text-slate-700",
   primaryCta:
     "inline-flex items-center rounded-xl bg-[linear-gradient(135deg,#2d3436,#41555d)] px-6 py-3.5 font-label text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-float",

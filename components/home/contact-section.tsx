@@ -8,7 +8,7 @@ export function ContactSection({ content }: { content: SiteContent }) {
     <section id="contact" className={homeTokens.sectionSpacing}>
       <div className={homeTokens.contactPanel}>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-end">
-          <SectionHeader title={content.contact.title} intro={content.contact.intro} />
+          <SectionHeader title={content.contact.title} intro={content.contact.intro} locale={content.locale} />
           <div className="flex flex-wrap gap-3 lg:justify-end">
             {content.contact.items.slice(0, 2).map((item, index) => (
               <a

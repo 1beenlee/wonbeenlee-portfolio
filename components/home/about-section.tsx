@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/home/section-header";
 export function AboutSection({ content }: { content: SiteContent }) {
   return (
     <section id="about" className={homeTokens.sectionSpacing}>
-      <SectionHeader title={content.about.title} />
+      <SectionHeader title={content.about.title} locale={content.locale} />
       <div className="mt-10 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
         <div className="rounded-[28px] bg-white p-7 shadow-card md:p-8 lg:p-10">
           {content.about.paragraphs.map((paragraph) => (

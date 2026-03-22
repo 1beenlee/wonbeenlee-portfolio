@@ -1,6 +1,7 @@
 import type { SiteContent } from "@/lib/types";
 
 import { homeTokens } from "@/components/home/design-tokens";
+import { getDisplayFontClass } from "@/lib/locale-typography";
 
 export function HeroSection({ content }: { content: SiteContent }) {
   return (
@@ -9,7 +10,7 @@ export function HeroSection({ content }: { content: SiteContent }) {
       <div className="relative grid gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.55fr)] lg:items-end">
         <div className="max-w-4xl">
           <p className={homeTokens.tag}>{content.hero.eyebrow}</p>
-          <h1 className="mt-5 max-w-4xl font-display text-[3rem] font-medium tracking-tight text-ink md:text-[4.8rem] md:leading-[1.02]">
+          <h1 className={`mt-5 max-w-4xl text-[3rem] font-medium tracking-tight text-ink md:text-[4.8rem] md:leading-[1.02] ${getDisplayFontClass(content.locale)}`}>
             {content.hero.title}
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-[1.45rem] md:leading-9">

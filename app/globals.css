@@ -5,6 +5,7 @@
 :root {
   --font-sans: "Manrope", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: "Newsreader", Georgia, serif;
+  --font-korean-display: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
   --font-label: "Inter", "Segoe UI", Arial, sans-serif;
   --background: #fcfcfc;
   --foreground: #1a202c;
@@ -21,6 +22,10 @@ body {
     linear-gradient(180deg, #fcfcfc 0%, #f8fafc 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+.font-korean-display {
+  font-family: var(--font-korean-display);
 }
 
 a {

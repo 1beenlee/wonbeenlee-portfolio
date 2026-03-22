@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Manrope, Newsreader } from "next/font/google";
+import { Inter, Manrope, Newsreader, Noto_Sans_KR } from "next/font/google";
 
 import "@/app/globals.css";
 import { contactLinks, siteName } from "@/lib/portfolio-config";
@@ -20,6 +20,13 @@ const newsreader = Newsreader({
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-label",
+  display: "swap"
+});
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ["latin"],
+  variable: "--font-korean-display",
+  weight: ["500", "600", "700"],
   display: "swap"
 });
 
@@ -53,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${manrope.variable} ${newsreader.variable} ${inter.variable}`}>
+      <body className={`${manrope.variable} ${newsreader.variable} ${inter.variable} ${notoSansKr.variable}`}>
         {children}
       </body>
     </html>

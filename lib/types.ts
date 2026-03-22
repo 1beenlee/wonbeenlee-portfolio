@@ -116,7 +116,8 @@ export type SiteContent = {
     aboutSidebarItems: string[];
     resumeSectionLabels: {
       experience: string;
-      educationAwards: string;
+      education: string;
+      awards: string;
       languages: string;
     };
   };
