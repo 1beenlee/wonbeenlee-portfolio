@@ -4,8 +4,7 @@ export const fallbackSiteUrl = "https://wonbeenlee-portfolio.vercel.app";
 
 export const assetPaths = {
   resume: "/resume/wonbeen-lee-resume.pdf",
-  ogImage: "/og-image.svg",
-  favicon: "/favicon.svg"
+  ogImage: "/opengraph-image"
 } as const;
 
 export const contactLinks = {

@@ -28,7 +28,10 @@ export function LanguageSwitcher({
   const currentPath = pathname.replace(/^\/(en|ja|ko)/, "") || "";
 
   return (
-    <div className="flex items-center gap-1.5 font-label text-[11px] uppercase tracking-[0.22em] text-slate-500" aria-label={label}>
+    <div
+      className="flex items-center gap-1 font-label text-[10px] uppercase tracking-[0.2em] text-slate-500 sm:gap-1.5 sm:text-[11px]"
+      aria-label={label}
+    >
       {locales.map((locale) => {
         const href = `/${locale}${currentPath}${hash}`;
         const active = locale === currentLocale;
@@ -37,7 +40,7 @@ export function LanguageSwitcher({
           <Link
             key={locale}
             href={href}
-            className={`rounded-full px-3 py-1.5 transition ${
+            className={`rounded-full px-2.5 py-1.5 transition sm:px-3 ${
               active
                 ? "bg-accent text-white"
                 : "text-slate-500 hover:bg-panel hover:text-ink"

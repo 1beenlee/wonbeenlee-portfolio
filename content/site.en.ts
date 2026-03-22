@@ -6,9 +6,9 @@ export const siteEn: SiteContent = {
   languageName: "English",
   seo: {
     title:
-      "Wonbeen Lee — Global Product Manager | AI-enabled B2B SaaS, Product Ops, SRM/S2P",
+      "Wonbeen Lee — Global Product Manager | AI-enabled B2B SaaS",
     description:
-      "Portfolio of Wonbeen Lee, a Global Product Manager focused on AI-enabled B2B SaaS, product planning systems, workflow design, and SRM/S2P software."
+      "Global Product Manager at emro building AI-enabled B2B SaaS products for complex enterprise workflows, product ops, and SRM/S2P systems."
   },
   nav: {
     switcherLabel: "Language",

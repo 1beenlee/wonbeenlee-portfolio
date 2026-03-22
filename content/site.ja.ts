@@ -6,9 +6,9 @@ export const siteJa: SiteContent = {
   languageName: "日本語",
   seo: {
     title:
-      "Wonbeen Lee — Global Product Manager | AI-enabled B2B SaaS, Product Ops, SRM/S2P",
+      "Wonbeen Lee — Global Product Manager | AI-enabled B2B SaaS",
     description:
-      "AI活用型B2B SaaS、プロダクト企画基盤、ワークフローデザイン、SRM/S2P領域に取り組むGlobal Product Manager、Wonbeen Leeのポートフォリオ。"
+      "AI活用型B2B SaaS、プロダクト企画、ワークフローデザイン、SRM/S2P領域に取り組むWonbeen Leeのポートフォリオ。"
   },
   nav: {
     switcherLabel: "言語",

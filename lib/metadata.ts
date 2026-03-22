@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-import { assetPaths, siteName } from "@/lib/portfolio-config";
+import { assetPaths, contactLinks, siteName } from "@/lib/portfolio-config";
 import { buildLocaleUrl, locales, siteUrl } from "@/lib/site";
 import type { Locale, SiteContent } from "@/lib/types";
 
@@ -20,6 +20,7 @@ export function buildMetadata(locale: Locale, content: SiteContent): Metadata {
     metadataBase: new URL(siteUrl),
     title: content.seo.title,
     description: content.seo.description,
+    authors: [{ name: "Wonbeen Lee", url: contactLinks.linkedinHref }],
     alternates: {
       canonical: buildLocaleUrl(locale),
       languages
@@ -44,7 +45,12 @@ export function buildMetadata(locale: Locale, content: SiteContent): Metadata {
       card: "summary_large_image",
       title: content.seo.title,
       description: content.seo.description,
-      images: [ogImage]
+      images: [ogImage],
+      creator: "@wonbeenlee"
+    },
+    robots: {
+      index: true,
+      follow: true
     }
   };
 }

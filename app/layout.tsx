@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Newsreader } from "next/font/google";
 
 import "@/app/globals.css";
+import { contactLinks, siteName } from "@/lib/portfolio-config";
+import { siteUrl } from "@/lib/site";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -22,8 +24,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Wonbeen Lee Portfolio",
-  description: "Multilingual portfolio site for Wonbeen Lee."
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Wonbeen Lee — Global Product Manager",
+    template: "%s"
+  },
+  description:
+    "Global Product Manager building AI-enabled B2B SaaS products for complex enterprise workflows, product ops, and SRM/S2P systems.",
+  applicationName: siteName,
+  authors: [{ name: "Wonbeen Lee", url: contactLinks.linkedinHref }],
+  creator: "Wonbeen Lee",
+  publisher: "Wonbeen Lee",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon" }]
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  }
 };
 
 export default function RootLayout({

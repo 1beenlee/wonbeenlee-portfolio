@@ -42,16 +42,15 @@ Confirmed implementation state:
 
 - Connect the GitHub repository to the Vercel project if you want automatic deploys on push.
   - The site is deployed and live now, but Git-based auto-deploy is not yet linked.
-- Replace placeholder brand assets when final versions are ready:
-  - `public/favicon.svg`
-  - `public/og-image.svg`
 - Optionally update stronger public-safe proof points in the content files later.
 
 ## Known placeholders
 
-- `public/favicon.svg` is a functional placeholder, not final branding
-- `public/og-image.svg` is usable for launch but still placeholder-level
 - The site is live without a custom domain; it currently uses the default Vercel domain
+- Brand assets are now served through App Router metadata routes and file conventions:
+  - `app/icon.svg`
+  - `app/apple-icon.tsx`
+  - `app/opengraph-image.tsx`
 
 ## Post-deploy validation checklist
 
@@ -59,5 +58,5 @@ Confirmed implementation state:
 - Confirm the language switcher preserves route context
 - Confirm the resume button downloads the PDF
 - Check LinkedIn, email, and GitHub links
-- Confirm page title, description, canonical URL, and OG image in page metadata
+- Confirm page title, description, canonical URL, icon, and OG image in page metadata
 - Check mobile layout, especially hero, work cards, and resume section spacing

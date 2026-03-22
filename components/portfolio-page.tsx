@@ -15,7 +15,7 @@ export function PortfolioPage({ content }: { content: SiteContent }) {
     <div className={homeTokens.shell}>
       <div className={homeTokens.container}>
         <SiteHeader content={content} />
-        <main className="pt-8">
+        <main className="pt-5 lg:pt-8">
           <HeroSection content={content} />
           <ImpactSection content={content} />
           <WorkSection content={content} />

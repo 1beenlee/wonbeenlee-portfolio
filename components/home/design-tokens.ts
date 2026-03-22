@@ -13,7 +13,7 @@ export const homeTokens = {
   heroGlow:
     "absolute inset-y-0 right-0 hidden w-[34%] bg-[radial-gradient(circle_at_center,rgba(45,52,54,0.06),transparent_68%)] lg:block",
   header:
-    "sticky top-4 z-20 rounded-full bg-white/78 px-5 py-3 shadow-float backdrop-blur-xl",
+    "sticky top-2 z-20 rounded-[22px] bg-white/76 px-3 py-2 shadow-[0_10px_26px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:px-4 sm:py-2.5 lg:top-4 lg:rounded-full lg:px-5 lg:py-3 lg:shadow-float",
   metaLabel: "font-label text-[11px] uppercase tracking-[0.22em] text-slate-500",
   tag: "font-label text-[10px] uppercase tracking-[0.3em] text-slate-500",
   sectionTitle: "font-display text-4xl tracking-tight text-ink md:text-5xl",

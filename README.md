@@ -76,15 +76,13 @@ Before production launch, set the final domain in your deployment environment.
 
 ## Placeholder brand assets
 
-These files are functional placeholders and should be replaced before public launch if stronger branding assets are available:
+Brand assets are now handled through Next App Router metadata conventions:
 
-- `public/favicon.svg`
-- `public/og-image.svg`
+- `app/icon.svg`
+- `app/apple-icon.tsx`
+- `app/opengraph-image.tsx`
 
-Current status:
-
-- `favicon.svg` is a usable monogram placeholder.
-- `og-image.svg` is a text-based preview asset, not final brand artwork.
+Optional editable source art can live under `public/brand/`.
 
 ## Deployment
 
