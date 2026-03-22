@@ -84,6 +84,17 @@ Brand assets are now handled through Next App Router metadata conventions:
 
 Optional editable source art can live under `public/brand/`.
 
+## Optional integrations
+
+The repo includes an optional Channel Talk practice integration that is disabled by default.
+
+- Setup and removal guide: `docs/channel-talk-integration.md`
+- Required public env vars:
+  - `NEXT_PUBLIC_CHANNEL_TALK_ENABLED`
+  - `NEXT_PUBLIC_CHANNEL_TALK_PLUGIN_KEY`
+
+If the flag is off, the site behaves exactly as before.
+
 ## Deployment
 
 ### Vercel

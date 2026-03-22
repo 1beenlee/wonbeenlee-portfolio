@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Manrope, Newsreader, Noto_Sans_KR } from "next/font/google";
 
 import "@/app/globals.css";
+import { ChannelTalkLoader } from "@/components/integrations/channel-talk/channel-talk-loader";
 import { contactLinks, siteName } from "@/lib/portfolio-config";
 import { siteUrl } from "@/lib/site";
 
@@ -62,6 +63,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${manrope.variable} ${newsreader.variable} ${inter.variable} ${notoSansKr.variable}`}>
         {children}
+        <ChannelTalkLoader />
       </body>
     </html>
   );
