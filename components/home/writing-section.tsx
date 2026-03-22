@@ -14,6 +14,18 @@ export function WritingSection({ content }: { content: SiteContent }) {
             <p className={homeTokens.tag}>{item.tag}</p>
             <h3 className={`mt-4 text-[1.75rem] leading-tight text-ink ${getDisplayFontClass(content.locale)}`}>{item.title}</h3>
             <p className="mt-5 text-sm leading-7 text-slate-600">{item.summary}</p>
+            {item.href && item.linkLabel ? (
+              <div className="mt-6">
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noreferrer" : undefined}
+                  className={homeTokens.editorialLink}
+                >
+                  {item.linkLabel}
+                </a>
+              </div>
+            ) : null}
           </article>
         ))}
       </div>

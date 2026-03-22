@@ -33,6 +33,9 @@ export type WritingCard = {
   title: string;
   summary: string;
   tag: string;
+  href?: string;
+  linkLabel?: string;
+  external?: boolean;
 };
 
 export type ResumeEntry = {
@@ -40,6 +43,7 @@ export type ResumeEntry = {
   subtitle: string;
   period: string;
   detail: string;
+  proofLink?: LinkItem;
 };
 
 export type ResumeSnapshot = {

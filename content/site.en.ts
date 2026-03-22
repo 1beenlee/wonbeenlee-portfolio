@@ -135,25 +135,34 @@ export const siteEn: SiteContent = {
   writing: {
     title: "Writing & Insights",
     intro:
-      "Themes I plan to develop into public writing. For now, they show the questions and operating patterns I care about most.",
+      "A small set of public writing and field notes that reflect how I think about AI adoption, product planning, and enterprise workflow change.",
     items: [
       {
-        tag: "AI x Product Ops",
-        title: "Where AI improves product work",
+        tag: "LinkedIn Article",
+        title: "My journey of bringing AI to product planning, Part 1",
         summary:
-          "Notes on using AI for planning support, synthesis, and execution quality without adding unnecessary workflow debt."
+          "Why AI adoption in product planning often stalls, and what has to change before teams can use it in a grounded way.",
+        href: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-1-why-adoption-lee-sx3hc",
+        linkLabel: "Read article",
+        external: true
       },
       {
-        tag: "Enterprise UX",
-        title: "Designing for operational complexity",
+        tag: "LinkedIn Article",
+        title: "My journey of bringing AI to product planning, Part 2",
         summary:
-          "Reflections on how enterprise products become easier to use when workflow structure is clarified before interface details."
+          "A follow-up on strategy, operating choices, and how AI can be introduced into product planning without becoming performative.",
+        href: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-2-strategy-wonbeen-lee-yczxc",
+        linkLabel: "Read article",
+        external: true
       },
       {
-        tag: "Global PM",
-        title: "Making product work legible across teams and markets",
+        tag: "Field Note",
+        title: "Gartner Supply Chain Symposium/Xpo 2025",
         summary:
-          "Thoughts on product communication, documentation, and decision framing in globally oriented environments."
+          "A short field note on supply chain, SRM, and agentic AI themes that matter for enterprise product work.",
+        href: "https://www.linkedin.com/posts/wonbeenlee_supplychain-srm-agentic-activity-7350557444080574464-laYa",
+        linkLabel: "View post",
+        external: true
       }
     ]
   },
@@ -211,7 +220,12 @@ export const siteEn: SiteContent = {
           subtitle: "emro Inc.",
           period: "Jan 2026",
           detail:
-            "Recognized for proactive ownership and contributions to product planning standards and AI-related initiatives."
+            "Recognized for proactive ownership and contributions to product planning standards and AI-related initiatives.",
+          proofLink: {
+            label: "View LinkedIn post",
+            href: "https://www.linkedin.com/posts/wonbeenlee_productmanagement-b2b-saas-activity-7418262488476958720-8dA1",
+            external: true
+          }
         },
         {
           title: "Excellence Award in Digital Market Idea Competition",

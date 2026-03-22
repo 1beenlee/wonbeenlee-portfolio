@@ -51,6 +51,16 @@ export function ResumeSection({ content }: { content: SiteContent }) {
                 <p className="mt-1 text-sm text-slate-500">{item.subtitle}</p>
                 <p className="mt-2 font-label text-[11px] uppercase tracking-[0.22em] text-slate-400">{item.period}</p>
                 <p className="mt-2 text-sm leading-7 text-slate-600">{item.detail}</p>
+                {item.proofLink ? (
+                  <a
+                    href={item.proofLink.href}
+                    target={item.proofLink.external ? "_blank" : undefined}
+                    rel={item.proofLink.external ? "noreferrer" : undefined}
+                    className={`${homeTokens.editorialLink} mt-3`}
+                  >
+                    {item.proofLink.label}
+                  </a>
+                ) : null}
               </div>
               ))}
             </div>

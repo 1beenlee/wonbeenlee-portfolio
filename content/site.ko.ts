@@ -135,25 +135,34 @@ export const siteKo: SiteContent = {
   writing: {
     title: "Writing & Insights",
     intro:
-      "앞으로 공개 글로 발전시킬 주제들입니다. 현재는 제가 제품 일을 어떤 문제의식으로 바라보는지 보여주는 신호 역할을 합니다.",
+      "AI 활용, 프로덕트 기획, 엔터프라이즈 워크플로우에 대한 관점을 보여주는 공개 글과 현장 메모만 선별해 담았습니다.",
     items: [
       {
-        tag: "AI x Product Ops",
-        title: "AI는 제품 실무 어디에서 효과가 나는가",
+        tag: "LinkedIn Article",
+        title: "AI를 프로덕트 기획에 도입한 여정 Part 1",
         summary:
-          "기획 지원, 요약, 구조화 같은 장면에서 AI가 실제 업무 품질을 어떻게 높일 수 있는지 정리합니다."
+          "왜 프로덕트 기획에서 AI 도입이 쉽게 자리잡지 못하는지, 그 배경과 전제를 정리한 글입니다.",
+        href: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-1-why-adoption-lee-sx3hc",
+        linkLabel: "글 읽기",
+        external: true
       },
       {
-        tag: "Enterprise UX",
-        title: "운영 복잡도를 다루는 제품 설계",
+        tag: "LinkedIn Article",
+        title: "AI를 프로덕트 기획에 도입한 여정 Part 2",
         summary:
-          "인터페이스 이전에 업무 흐름을 어떻게 구조화해야 더 나은 UX가 나오는지에 대한 관점을 다룹니다."
+          "전략과 운영 선택을 중심으로 AI를 실제 기획 흐름에 안착시키는 방법을 이어서 다룬 글입니다.",
+        href: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-2-strategy-wonbeen-lee-yczxc",
+        linkLabel: "글 읽기",
+        external: true
       },
       {
-        tag: "Global PM",
-        title: "팀과 시장을 넘어 읽히는 제품 커뮤니케이션",
+        tag: "Field Note",
+        title: "Gartner Supply Chain Symposium/Xpo 2025",
         summary:
-          "문서, 의사결정, 협업 구조를 어떻게 설계하면 글로벌 지향 팀에서도 더 잘 작동하는지 고민합니다."
+          "공급망, SRM, agentic AI 흐름을 제품 관점에서 짧게 정리한 현장 메모 성격의 LinkedIn 포스트입니다.",
+        href: "https://www.linkedin.com/posts/wonbeenlee_supplychain-srm-agentic-activity-7350557444080574464-laYa",
+        linkLabel: "포스트 보기",
+        external: true
       }
     ]
   },
@@ -211,7 +220,12 @@ export const siteKo: SiteContent = {
           subtitle: "emro Inc.",
           period: "2026.01",
           detail:
-            "주도적인 오너십과 제품 기획 기준, AI 관련 시도에 대한 기여를 인정받았습니다."
+            "주도적인 오너십과 제품 기획 기준, AI 관련 시도에 대한 기여를 인정받았습니다.",
+          proofLink: {
+            label: "LinkedIn 포스트 보기",
+            href: "https://www.linkedin.com/posts/wonbeenlee_productmanagement-b2b-saas-activity-7418262488476958720-8dA1",
+            external: true
+          }
         },
         {
           title: "Excellence Award in Digital Market Idea Competition",
