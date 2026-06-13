@@ -26,7 +26,8 @@ export function Hero({ copy }: { copy: SiteCopy }) {
               <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a className="secondary-button" href="#contact">
-              <span>{copy.sections.contact.title}</span>
+              <span className="desktop-only-text">{copy.sections.contact.title}</span>
+              <span className="mobile-only-text">Let's talk</span>
               <Mail size={17} aria-hidden="true" />
             </a>
           </div>

@@ -4,7 +4,7 @@ export const internalKo: SiteCopy = {
   meta: {
     audience: "internal",
     locale: "ko",
-    label: "AI 조달 PM 포트폴리오",
+    label: "AI 구매 PM 포트폴리오",
     alternatePath: "/en"
   },
   nav: [
@@ -17,7 +17,7 @@ export const internalKo: SiteCopy = {
     { label: "연락", href: "#contact" }
   ],
   hero: {
-    title: "조달 SaaS, Agentic AI, Product Ops를 연결하는 Caidentia PM",
+    title: "구매 SaaS, Agentic AI, Product Ops를 연결하는 Caidentia PM",
     subtitle:
       "emro에서 AI 기반 SRM/S2P SaaS인 Caidentia의 글로벌 제품 기획을 맡고 있습니다. 제품 기획, Jira 기반 실행체계, AI Workplace 전략, 시장 인사이트, 대외 커뮤니케이션 자산을 반복 가능한 운영 체계로 연결합니다.",
     primaryAction: "주요 사례 보기",
@@ -37,12 +37,12 @@ export const internalKo: SiteCopy = {
   sections: {
     positioning: {
       kicker: "Positioning / 하는 일",
-      title: "복잡한 조달 업무를 운영 가능한 제품 체계로 정리합니다.",
+      title: "복잡한 구매 업무를 운영 가능한 제품 체계로 정리합니다.",
       body:
-        "제 일은 Caidentia 제품 기획, AI 업무 설계, Jira-Confluence 운영 루틴, 시장 대응 커뮤니케이션이 만나는 지점에 있습니다. AI를 단발성 생산성 도구로 보지 않고, 조달 객체, 권한, 기획 산출물, 릴리스 루틴, 검토 가능한 흐름 위에 올립니다.",
+        "제 일은 Caidentia 제품 기획, AI 업무 설계, Jira-Confluence 운영 루틴, 시장 대응 커뮤니케이션이 만나는 지점에 있습니다. AI를 단발성 생산성 도구로 보지 않고, 구매 객체, 권한, 기획 산출물, 릴리스 루틴, 검토 가능한 흐름 위에 올립니다.",
       pillars: [
         {
-          title: "조달 도메인 깊이",
+          title: "구매 도메인 깊이",
           body:
             "PR, RFx, 계약, PO, ASN, 입고, 인보이스, 품목, 공급사, 지출 맥락, 역할 기반 접근권한 위에서 SRM/S2P 제품을 기획합니다."
         },
@@ -67,16 +67,16 @@ export const internalKo: SiteCopy = {
         {
           id: "agentic-ai",
           label: "사례 A",
-          title: "조달 업무를 위한 Agentic AI와 AI Workplace",
+          title: "구매 업무를 위한 Agentic AI와 AI Workplace",
           category: "Ask Caidentia / AI Workplace",
           problem:
-            "엔터프라이즈 조달 사용자는 여러 메뉴, 문서, 역할, 권한을 오가며 일합니다. AI가 조달 객체, 접근 규칙, 검색 결과, 다음 행동과 연결되지 않으면 일반 챗봇만으로는 실제 업무 흐름에 들어가기 어렵습니다.",
+            "엔터프라이즈 구매 사용자는 여러 메뉴, 문서, 역할, 권한을 오가며 일합니다. AI가 구매 객체, 접근 규칙, 검색 결과, 다음 행동과 연결되지 않으면 일반 챗봇만으로는 실제 업무 흐름에 들어가기 어렵습니다.",
           contribution:
             "읽기 전용 문서 검색, 연속 질의응답, 메뉴 이동, 더보기 동작, 권한 기반 응답, Chat, Agent Mode, File Insight를 묶는 AI Workplace 방향을 기획했습니다. PR-to-RFx 자동화, 평가 의견 초안, 문서 검색 v2, 내부 에이전트 도구와도 연결되는 흐름입니다.",
           outcome:
-            "MVP/Beta 기능에서 AI Workplace 방향으로 이어지는 조달 특화 AI UX 구조를 잡는 데 기여했습니다. 내부 화면, 구현 세부정보, 민감한 로드맵은 공개 범위에서 제외했습니다.",
+            "MVP/Beta 기능에서 AI Workplace 방향으로 이어지는 구매 특화 AI UX 구조를 잡는 데 기여했습니다. 내부 화면, 구현 세부정보, 민감한 로드맵은 공개 범위에서 제외했습니다.",
           metrics: [
-            "조달 객체를 이해하는 AI 흐름",
+            "구매 객체를 이해하는 AI 흐름",
             "권한을 반영하는 AI 상호작용 모델",
             "Chat, Agent Mode, File Insight를 잇는 AI Workplace 방향"
           ],
@@ -355,7 +355,7 @@ export const internalKo: SiteCopy = {
             "템플릿, 용어, 이슈 구조, 릴리스 루틴은 AI 보조 업무를 품질 저하 없이 확장하게 해줍니다."
         },
         {
-          title: "조달 AI에는 권한 맥락이 필요합니다",
+          title: "구매 AI에는 권한 맥락이 필요합니다",
           body:
             "엔터프라이즈 AI는 역할, 조직 범위, 문서 접근권한, 결과 가시성, 안전한 다음 행동을 존중해야 합니다."
         },
@@ -408,7 +408,7 @@ export const internalKo: SiteCopy = {
     },
     contact: {
       kicker: "연락",
-      title: "제품, AI 업무 흐름, Product Ops에 대해 이야기할 수 있습니다.",
+      title: "제품, AI, Ops에 대해 이야기하기",
       body:
         "협업, 네트워킹, 채용 관련 대화는 LinkedIn으로 연락해 주세요. GitHub에서는 일부 공개 기술 작업과 실험을 확인할 수 있습니다.",
       links: [
@@ -445,7 +445,7 @@ export const internalKo: SiteCopy = {
   },
   footer: {
     note:
-      "AI 기반 조달 제품 기획, Jira 기반 Product Ops, Agentic AI 업무 흐름.",
+      "AI 기반 구매 제품 기획, Jira 기반 Product Ops, Agentic AI 업무 흐름.",
     backToTop: "맨 위로"
   }
 };

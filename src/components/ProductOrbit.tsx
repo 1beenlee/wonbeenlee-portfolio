@@ -1,7 +1,18 @@
+import React from "react";
+
 export function ProductOrbit() {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty("--mouse-x", `${x}px`);
+    e.currentTarget.style.setProperty("--mouse-y", `${y}px`);
+  };
+
   return (
     <div className="product-orbit-container" aria-hidden="true">
       <div className="orbit-wrapper">
+        <div className="orbit-bg-glow" />
         <svg className="orbit-svg" viewBox="0 0 500 500">
           {/* Group 1: Rotated by -15deg */}
           <g transform="rotate(-15 250 250)">
@@ -40,54 +51,62 @@ export function ProductOrbit() {
         {/* Satellite Cards (Liquid Glass style) */}
         
         {/* SRM Card */}
-        <div className="satellite-card sat-srm">
-          <div className="sat-card-glow" />
-          <div className="sat-card-content">
-            <strong>SRM</strong>
-            <ul>
-              <li>Supplier Profile</li>
-              <li>Performance</li>
-              <li>Risk & Compliance</li>
-            </ul>
+        <div className="satellite-wrapper sat-srm">
+          <div className="satellite-card" onMouseMove={handleMouseMove}>
+            <div className="sat-card-glow" />
+            <div className="sat-card-content">
+              <strong>SRM</strong>
+              <ul>
+                <li>Supplier Profile</li>
+                <li>Performance</li>
+                <li>Risk & Compliance</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* S2P Card */}
-        <div className="satellite-card sat-s2p">
-          <div className="sat-card-glow" />
-          <div className="sat-card-content">
-            <strong>S2P</strong>
-            <ul>
-              <li>Sourcing & RFx</li>
-              <li>Contract Management</li>
-              <li>Procure-to-Pay</li>
-            </ul>
+        <div className="satellite-wrapper sat-s2p">
+          <div className="satellite-card" onMouseMove={handleMouseMove}>
+            <div className="sat-card-glow" />
+            <div className="sat-card-content">
+              <strong>S2P</strong>
+              <ul>
+                <li>Sourcing & RFx</li>
+                <li>Contract Management</li>
+                <li>Procure-to-Pay</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Data & Integrations Card */}
-        <div className="satellite-card sat-data">
-          <div className="sat-card-glow" />
-          <div className="sat-card-content">
-            <strong>Data & Integrations</strong>
-            <ul>
-              <li>ERP & Legacy Sync</li>
-              <li>Finance & Ledger</li>
-              <li>Procurement Analytics</li>
-            </ul>
+        <div className="satellite-wrapper sat-data">
+          <div className="satellite-card" onMouseMove={handleMouseMove}>
+            <div className="sat-card-glow" />
+            <div className="sat-card-content">
+              <strong>Data & Integrations</strong>
+              <ul>
+                <li>ERP & Legacy Sync</li>
+                <li>Finance & Ledger</li>
+                <li>Procurement Analytics</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         {/* Intelligence Layer Card */}
-        <div className="satellite-card sat-intel">
-          <div className="sat-card-glow" />
-          <div className="sat-card-content">
-            <strong>Intelligence Layer</strong>
-            <ul>
-              <li>Predictive Analytics</li>
-              <li>GenAI & Insights</li>
-              <li>Automation Agent</li>
-            </ul>
+        <div className="satellite-wrapper sat-intel">
+          <div className="satellite-card" onMouseMove={handleMouseMove}>
+            <div className="sat-card-glow" />
+            <div className="sat-card-content">
+              <strong>Intelligence Layer</strong>
+              <ul>
+                <li>Predictive Analytics</li>
+                <li>GenAI & Insights</li>
+                <li>Automation Agent</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

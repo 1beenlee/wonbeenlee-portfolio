@@ -43,6 +43,24 @@ export function ProductOpsSystem({ copy }: { copy: SiteCopy }) {
           </div>
           
           {/* Continuous Loop indicator */}
+          <svg className="ops-loop-svg" viewBox="0 0 1000 65" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="loop-grad" x1="100%" y1="0%" x2="0%" y2="0%">
+                <stop offset="0%" stopColor="var(--teal)" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="var(--accent)" stopOpacity="0.8" />
+                <stop offset="100%" stopColor="var(--teal)" stopOpacity="0.8" />
+              </linearGradient>
+            </defs>
+            <path
+              className="loop-svg-path"
+              d="M 900,0 L 900,35 Q 900,58 870,58 L 130,58 Q 100,58 100,35 L 100,5"
+              fill="none"
+            />
+            <polygon points="100,0 96,8 104,8" fill="var(--teal)" />
+            <circle r="4" fill="var(--accent)">
+              <animateMotion dur="8s" repeatCount="indefinite" path="M 900,0 L 900,35 Q 900,58 870,58 L 130,58 Q 100,58 100,35 L 100,5" />
+            </circle>
+          </svg>
           <div className="ops-loop-line">
             <span className="loop-label">
               <RefreshCw size={12} className="spinning-icon" />

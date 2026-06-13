@@ -408,7 +408,7 @@ export const internalEn: SiteCopy = {
     },
     contact: {
       kicker: "Contact",
-      title: "For product, AI workflow, and Product Ops conversations.",
+      title: "Let’s talk Product, AI & Ops",
       body:
         "For collaboration, networking, or hiring conversations, LinkedIn is the best place to reach me. GitHub holds selected public technical and product-adjacent work.",
       links: [

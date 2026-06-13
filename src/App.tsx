@@ -42,6 +42,69 @@ function App() {
   
   useRevealMotion();
 
+  useEffect(() => {
+    let highlightTimeoutId: number | undefined;
+    let removeTimeoutId: number | undefined;
+
+    const triggerHighlight = (id: string) => {
+      const element = document.getElementById(id);
+      if (element) {
+        // Clear any pending timeouts
+        if (highlightTimeoutId) clearTimeout(highlightTimeoutId);
+        if (removeTimeoutId) clearTimeout(removeTimeoutId);
+
+        // Immediately remove highlight class from all sections to avoid duplicates
+        document.querySelectorAll(".pulse-highlight").forEach((el) => {
+          el.classList.remove("pulse-highlight");
+        });
+        
+        // Wait 1 second (1000ms) for the scroll to finish, then trigger the 2-second pulse
+        highlightTimeoutId = window.setTimeout(() => {
+          void element.offsetWidth; // force reflow
+          element.classList.add("pulse-highlight");
+          
+          removeTimeoutId = window.setTimeout(() => {
+            element.classList.remove("pulse-highlight");
+          }, 2000);
+        }, 1000);
+      }
+    };
+
+    const handleAnchorClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
+      if (!anchor) return;
+      
+      const href = anchor.getAttribute("href");
+      if (href && href.startsWith("#") && href.length > 1) {
+        const id = href.slice(1);
+        triggerHighlight(id);
+      }
+    };
+
+    const handleHashChange = () => {
+      if (window.location.hash) {
+        triggerHighlight(window.location.hash.slice(1));
+      }
+    };
+
+    // Trigger on mount if hash is present
+    if (window.location.hash) {
+      setTimeout(() => {
+        handleHashChange();
+      }, 500);
+    }
+
+    window.addEventListener("click", handleAnchorClick, { capture: true });
+    window.addEventListener("hashchange", handleHashChange);
+    return () => {
+      if (highlightTimeoutId) clearTimeout(highlightTimeoutId);
+      if (removeTimeoutId) clearTimeout(removeTimeoutId);
+      window.removeEventListener("click", handleAnchorClick, { capture: true });
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   return (
     <div className="app-shell">
       <Header
