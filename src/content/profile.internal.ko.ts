@@ -10,8 +10,10 @@ export const internalKo: SiteCopy = {
   nav: [
     { label: "하는 일", href: "#positioning" },
     { label: "주요 작업", href: "#work" },
+    { label: "운영 체계", href: "#productOps" },
     { label: "지표", href: "#metrics" },
     { label: "스택", href: "#stack" },
+    { label: "커리어", href: "#timeline" },
     { label: "연락", href: "#contact" }
   ],
   hero: {
@@ -188,6 +190,42 @@ export const internalKo: SiteCopy = {
         }
       ]
     },
+    productOps: {
+      kicker: "Product Ops / AI & 제품 운영체계",
+      title: "AI 제품 운영체계와 협업 시스템을 설계합니다.",
+      body: "제품 발견(Discover)부터 시작해 정의(Define), 빌드(Build), 출시(Launch), 측정(Measure) 및 개선(Iterate) 단계로 흐르는 통합적인 제품 운영 루틴을 구축했습니다. AI를 단순한 보조 도구가 아닌, 각 단계의 의사결정과 산출물 품질을 보증하는 시스템으로 연결합니다.",
+      stages: [
+        {
+          id: "discover",
+          title: "발견 (Discover)",
+          items: ["시장 및 사용자 조사", "문제 정의 검증", "기회 규모 분석"]
+        },
+        {
+          id: "define",
+          title: "정의 (Define)",
+          items: ["제품 전략 수립", "로드맵 및 우선순위", "목표 지표 설계"]
+        },
+        {
+          id: "build",
+          title: "빌드 (Build)",
+          items: ["애자일 실행", "부서 간 정렬", "사용성 및 품질 확보"]
+        },
+        {
+          id: "launch",
+          title: "출시 (Launch)",
+          items: ["시장 진입 계획", "변화 관리 체계", "출시 및 교육"]
+        },
+        {
+          id: "measure",
+          title: "측정 (Measure)",
+          items: ["제품 데이터 분석", "AI 기반 인사이트", "반복적 피드백 루프"]
+        }
+      ],
+      copilotTitle: "AI 코파일럿 (AI Copilot)",
+      copilotBody: "제품 수명 주기 전반에 내장된 인텔리전스로 분석, 예측, 자동화를 연결합니다.",
+      copilotFeatures: ["인사이트 (Insights)", "예측 (Predictions)", "자동화 (Automation)"],
+      loopLabel: "지속적인 순환 개선 루프"
+    },
     evidenceMetrics: {
       kicker: "근거 지표",
       title: "범위를 함께 밝히는 지표.",
@@ -266,6 +304,27 @@ export const internalKo: SiteCopy = {
           tool: "Claude / ChatGPT / MCP",
           capability: "AI 보조 기획, 리뷰, 검색, 인계, 업무 흐름 조율",
           evidence: "AI Skill 생태계와 Product Ops 업무 흐름"
+        }
+      ]
+    },
+    timeline: {
+      kicker: "Career Timeline / 커리어 여정",
+      title: "기술 문서화에서 시작해 제품 전체를 조율하는 PM으로 성장했습니다.",
+      body: "테크니컬 라이터 시절 다진 체계적인 문서 구조화 능력과 부서 간 정렬 역량을 바탕으로, 복잡한 엔터프라이즈 SaaS 제품의 기획과 운영체계를 설계하는 Product Manager로 전환하여 성과를 만들어내고 있습니다.",
+      events: [
+        {
+          period: "2021 - 2023",
+          role: "Technical Writer (테크니컬 라이터)",
+          company: "emro",
+          description: "복잡한 제품의 요구사항을 명확히 정의하고 개발자와 사업 부서 간 소통 비용을 낮추는 체계적인 제품 스펙 설계 및 기획 산출물을 작성했습니다.",
+          skills: ["문서 구조화", "요구사항 분석", "커뮤니케이션 정렬"]
+        },
+        {
+          period: "2023 - 현재",
+          role: "Global Product Manager (제품 기획 PM)",
+          company: "emro",
+          description: "AI 기반 SRM/S2P SaaS 제품인 Caidentia의 글로벌 제품 기획, Jira 기반 Product Ops 체계 구축, 에이전트 AI 설계 및 시장 대응 데모 시나리오를 주도하고 있습니다.",
+          skills: ["제품 전략 및 로드맵", "Jira/Confluence 운영", "Agentic AI 기획"]
         }
       ]
     },

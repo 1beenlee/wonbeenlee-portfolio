@@ -10,8 +10,10 @@ export const internalEn: SiteCopy = {
   nav: [
     { label: "What I do", href: "#positioning" },
     { label: "Work", href: "#work" },
+    { label: "System", href: "#productOps" },
     { label: "Metrics", href: "#metrics" },
     { label: "Stack", href: "#stack" },
+    { label: "Timeline", href: "#timeline" },
     { label: "Contact", href: "#contact" }
   ],
   hero: {
@@ -188,6 +190,42 @@ export const internalEn: SiteCopy = {
         }
       ]
     },
+    productOps: {
+      kicker: "Product Ops / AI & Product Ops System",
+      title: "AI Product Operating System & Collaboration",
+      body: "Designed an integrated product operating system connecting stages from Discover to Define, Build, Launch, Measure, and Iterate. AI is treated as a core system component rather than a generic utility, guaranteeing artifact quality and alignment across the product lifecycle.",
+      stages: [
+        {
+          id: "discover",
+          title: "Discover",
+          items: ["Market & User Research", "Problem Validation", "Opportunity Sizing"]
+        },
+        {
+          id: "define",
+          title: "Define",
+          items: ["Product Strategy", "Roadmap & Prioritization", "OKRs & Metrics"]
+        },
+        {
+          id: "build",
+          title: "Build",
+          items: ["Agile Delivery", "Cross-functional Alignment", "Quality & UX Excellence"]
+        },
+        {
+          id: "launch",
+          title: "Launch",
+          items: ["Go-to-Market", "Change Management", "Enablement"]
+        },
+        {
+          id: "measure",
+          title: "Measure",
+          items: ["Product Analytics", "AI-driven Insights", "Iterate & Optimize"]
+        }
+      ],
+      copilotTitle: "AI Copilot",
+      copilotBody: "Embedded intelligence across the product lifecycle supporting insight, prediction, and automation.",
+      copilotFeatures: ["Insights", "Predictions", "Automation"],
+      loopLabel: "Continuous Learning Loop"
+    },
     evidenceMetrics: {
       kicker: "Evidence Metrics",
       title: "Evidence metrics with clear scope.",
@@ -266,6 +304,27 @@ export const internalEn: SiteCopy = {
           tool: "Claude / ChatGPT / MCP",
           capability: "AI-assisted planning, review, search, handoff, and workflow orchestration",
           evidence: "AI Skill ecosystem and Product Ops workflows"
+        }
+      ]
+    },
+    timeline: {
+      kicker: "Career Timeline",
+      title: "Transitioning from technical writer to enterprise product manager.",
+      body: "Leveraging structured documentation, analysis depth, and stakeholder alignment to design and lead B2B SaaS product systems.",
+      events: [
+        {
+          period: "2021 - 2023",
+          role: "Technical Writer",
+          company: "emro",
+          description: "Structured complex product requirements and authored specifications, reducing alignment overhead between engineering and business units.",
+          skills: ["Information Architecture", "Requirement Analysis", "Cross-Functional Alignment"]
+        },
+        {
+          period: "2023 - Present",
+          role: "Global Product Manager",
+          company: "emro",
+          description: "Leading global product planning for the AI-enabled SRM/S2P SaaS platform Caidentia, driving Jira-based Product Ops and Agentic AI workflow planning.",
+          skills: ["Product Strategy & Roadmap", "Jira/Confluence Product Ops", "Agentic AI Workflow"]
         }
       ]
     },

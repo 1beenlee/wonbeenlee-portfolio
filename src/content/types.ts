@@ -36,6 +36,20 @@ export type CaseStudy = {
   tags: string[];
 };
 
+export type TimelineEvent = {
+  period: string;
+  role: string;
+  company: string;
+  description: string;
+  skills: string[];
+};
+
+export type ProductOpsStage = {
+  id: string;
+  title: string;
+  items: string[];
+};
+
 export type OperatingStackItem = {
   tool: string;
   capability: string;
@@ -103,6 +117,16 @@ export type SiteCopy = {
       body: string;
       cases: CaseStudy[];
     };
+    productOps: {
+      kicker: string;
+      title: string;
+      body: string;
+      stages: ProductOpsStage[];
+      copilotTitle: string;
+      copilotBody: string;
+      copilotFeatures: string[];
+      loopLabel: string;
+    };
     evidenceMetrics: {
       kicker: string;
       title: string;
@@ -114,6 +138,12 @@ export type SiteCopy = {
       title: string;
       body: string;
       items: OperatingStackItem[];
+    };
+    timeline: {
+      kicker: string;
+      title: string;
+      body: string;
+      events: TimelineEvent[];
     };
     thinkingSignals: {
       kicker: string;

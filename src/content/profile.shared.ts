@@ -3,7 +3,7 @@ export const canonicalProfile = {
   role: "Global Product Manager @ emro",
   headline:
     "Global Product Manager @ emro | Caidentia product planning, Jira-based execution systems, Agentic AI strategy, and external-facing product assets",
-  location: "Seoul, South Korea",
+  location: "Tokyo, Japan / Seoul, South Korea",
   linkedinUrl: "https://www.linkedin.com/in/wonbeenlee/",
   lastVerified: "2026-06-13",
   currentCompany: "emro",

@@ -1,0 +1,96 @@
+export function ProductOrbit() {
+  return (
+    <div className="product-orbit-container" aria-hidden="true">
+      <div className="orbit-wrapper">
+        <svg className="orbit-svg" viewBox="0 0 500 500">
+          {/* Group 1: Rotated by -15deg */}
+          <g transform="rotate(-15 250 250)">
+            <path className="orbit-path path-1" d="M 50,250 a 200,70 0 1,0 400,0 a 200,70 0 1,0 -400,0" fill="none" />
+            <circle r="4.5" className="orbit-dot dot-1">
+              <animateMotion dur="18s" repeatCount="indefinite" path="M 50,250 a 200,70 0 1,0 400,0 a 200,70 0 1,0 -400,0" />
+            </circle>
+          </g>
+
+          {/* Group 2: Rotated by 25deg */}
+          <g transform="rotate(25 250 250)">
+            <path className="orbit-path path-2" d="M 70,250 a 180,100 0 1,0 360,0 a 180,100 0 1,0 -360,0" fill="none" />
+            <circle r="4.5" className="orbit-dot dot-2">
+              <animateMotion dur="24s" repeatCount="indefinite" path="M 70,250 a 180,100 0 1,0 360,0 a 180,100 0 1,0 -360,0" />
+            </circle>
+          </g>
+
+          {/* Group 3: Rotated by 60deg */}
+          <g transform="rotate(60 250 250)">
+            <path className="orbit-path path-3" d="M 30,250 a 220,50 0 1,0 440,0 a 220,50 0 1,0 -440,0" fill="none" />
+            <circle r="4.5" className="orbit-dot dot-3">
+              <animateMotion dur="20s" repeatCount="indefinite" path="M 30,250 a 220,50 0 1,0 440,0 a 220,50 0 1,0 -440,0" />
+            </circle>
+          </g>
+        </svg>
+        
+        {/* Central Core */}
+        <div className="orbit-core">
+          <div className="core-glow" />
+          <div className="core-inner">
+            <strong>AI</strong>
+            <span>Product OS</span>
+          </div>
+        </div>
+
+        {/* Satellite Cards (Liquid Glass style) */}
+        
+        {/* SRM Card */}
+        <div className="satellite-card sat-srm">
+          <div className="sat-card-glow" />
+          <div className="sat-card-content">
+            <strong>SRM</strong>
+            <ul>
+              <li>Supplier Profile</li>
+              <li>Performance</li>
+              <li>Risk & Compliance</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* S2P Card */}
+        <div className="satellite-card sat-s2p">
+          <div className="sat-card-glow" />
+          <div className="sat-card-content">
+            <strong>S2P</strong>
+            <ul>
+              <li>Sourcing & RFx</li>
+              <li>Contract Management</li>
+              <li>Procure-to-Pay</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Data & Integrations Card */}
+        <div className="satellite-card sat-data">
+          <div className="sat-card-glow" />
+          <div className="sat-card-content">
+            <strong>Data & Integrations</strong>
+            <ul>
+              <li>ERP & Legacy Sync</li>
+              <li>Finance & Ledger</li>
+              <li>Procurement Analytics</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Intelligence Layer Card */}
+        <div className="satellite-card sat-intel">
+          <div className="sat-card-glow" />
+          <div className="sat-card-content">
+            <strong>Intelligence Layer</strong>
+            <ul>
+              <li>Predictive Analytics</li>
+              <li>GenAI & Insights</li>
+              <li>Automation Agent</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
