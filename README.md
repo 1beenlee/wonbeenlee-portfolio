@@ -1,133 +1,37 @@
-# Wonbeen Lee Portfolio
+# Portfolio
 
-Multilingual portfolio site for Wonbeen Lee, built with Next.js, TypeScript, and Tailwind CSS.
+Public portfolio site for Wonbeen Lee, built with React, TypeScript, and Vite.
 
-## Stack
-
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
-- Structured localized content for `en`, `ja`, and `ko`
+This repository is the web-facing portfolio application. The broader personal knowledge base and source archives live separately in `1beenlee/wbeen-personal-kb`.
 
 ## Routes
 
-- `/` redirects to `/en`
-- `/en`
-- `/ja`
-- `/ko`
+- `/` - internal Korean portfolio
+- `/en` - internal English portfolio
+- `/public` - public-ready Korean portfolio
+- `/public/en` - public-ready English portfolio
 
-## Local development
-
-1. Install dependencies:
+## Development
 
 ```powershell
-npm.cmd install
+npm install
+npm run dev
 ```
-
-2. Start the dev server:
-
-```powershell
-npm.cmd run dev
-```
-
-3. Open `http://localhost:3000`
 
 ## Validation
 
-Run these before deployment:
-
 ```powershell
-npm.cmd run lint
-npm.cmd run typecheck
-npm.cmd run build
+npm run lint:copy
+npm run lint
+npm run build
 ```
 
-## Content editing
+## Content Model
 
-The main editable copy lives in:
+Portfolio copy lives in `src/content`.
 
-- `content/site.en.ts`
-- `content/site.ja.ts`
-- `content/site.ko.ts`
+- `profile.shared.ts` contains shared profile metadata.
+- `profile.internal.ko.ts` and `profile.internal.en.ts` contain the main portfolio copy.
+- `profile.public.ko.ts` and `profile.public.en.ts` inherit internal copy and override public route metadata.
 
-English is the canonical draft. Japanese and Korean are localized versions that follow the same schema.
-
-Shared rendering and localized labels are handled in:
-
-- `components/portfolio-page.tsx`
-- `lib/types.ts`
-
-## Resume asset
-
-The public resume download path is:
-
-`public/resume/wonbeen-lee-resume.pdf`
-
-The current file is already wired to the live CTA buttons. Replace it only with a newer public-safe resume.
-
-## SEO and launch-time settings
-
-Canonical and Open Graph URLs are built from `NEXT_PUBLIC_SITE_URL`.
-
-- If `NEXT_PUBLIC_SITE_URL` is set, the app uses that value.
-- If it is not set, the site falls back to `https://wonbeenlee-portfolio.vercel.app`.
-
-Before production launch, set the final domain in your deployment environment.
-
-## Placeholder brand assets
-
-Brand assets are now handled through Next App Router metadata conventions:
-
-- `app/icon.svg`
-- `app/apple-icon.tsx`
-- `app/opengraph-image.tsx`
-
-Optional editable source art can live under `public/brand/`.
-
-## Optional integrations
-
-The repo includes an optional Channel Talk practice integration that is disabled by default.
-
-- Setup and removal guide: `docs/channel-talk-integration.md`
-- Required public env vars:
-  - `NEXT_PUBLIC_CHANNEL_TALK_ENABLED`
-  - `NEXT_PUBLIC_CHANNEL_TALK_PLUGIN_KEY`
-
-If the flag is off, the site behaves exactly as before.
-
-## Deployment
-
-### Vercel
-
-Recommended primary deployment target.
-
-1. Push the repository to GitHub.
-2. Import the repo into Vercel.
-3. Framework preset: `Next.js`
-4. Build command: default Vercel build or `npm.cmd run build`
-5. Set `NEXT_PUBLIC_SITE_URL` to the final production URL.
-
-Current default deployment alias:
-
-`https://wonbeenlee-portfolio.vercel.app`
-
-### Cloudflare Pages
-
-The app is built as a static-first Next.js site and can be adapted for Cloudflare Pages as a secondary deployment target. Use the current Cloudflare Next.js workflow supported at deployment time and set the same `NEXT_PUBLIC_SITE_URL` value there.
-
-## Source hierarchy
-
-The public repository is intended to contain the deployable site, not the private source pack used to draft it.
-
-For future public-facing edits:
-
-1. Update the canonical English copy in `content/site.en.ts`
-2. Localize the same changes in `content/site.ja.ts` and `content/site.ko.ts`
-3. Use the latest private resume / LinkedIn export / source materials outside this public repo as the fact-checking reference
-
-## Notes
-
-- Keep all company references public-safe.
-- Do not add confidential roadmap details, customer-sensitive content, or internal issue information.
-- Do not overstate Japanese proficiency.
-- If stronger public-safe metrics become available later, update the proof points in `content/site.en.ts` first and then localize them.
+Sensitive details such as real customer data, internal URLs, Jira issue keys, page IDs, server names, secrets, tokens, and private evaluation material must not be committed.

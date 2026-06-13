@@ -1,15 +1,24 @@
-.next
 node_modules
-out
-coverage
-*.log
-*.tsbuildinfo
-.vercel
-source/
-_Worklog/
-Archive/
+dist
 .env
-.env.local
-.env.*.local
-codex_master_prompt.md
-.eslintrc.json
+.env.*
+!.env.example
+*.local
+
+# Local secrets and machine-specific files
+.wbeen-secrets/
+
+# Local browser/test artifacts
+.playwright-mcp/
+playwright-report/
+test-results/
+
+# Generated experiments and local archives
+pet-runs/
+project_sources_original_backup_*.zip
+
+# Editor and OS noise
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
