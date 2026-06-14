@@ -27,6 +27,7 @@ export function ContactCTA({ copy }: { copy: SiteCopy }) {
         <a className="contact-card liquid-glass-card" href="mailto:talentlee52@gmail.com">
           <div className="card-glass-glow" />
           <div className="card-fluid-blob" />
+          <div className="liquid-accent-layer" aria-hidden="true" />
           <Mail size={22} aria-hidden="true" />
           <div>
             <strong>Email</strong>
@@ -39,6 +40,7 @@ export function ContactCTA({ copy }: { copy: SiteCopy }) {
         <div className="contact-card location-card liquid-glass-card">
           <div className="card-glass-glow" />
           <div className="card-fluid-blob" />
+          <div className="liquid-accent-layer" aria-hidden="true" />
           <MapPin size={22} aria-hidden="true" />
           <div>
             <strong>Location</strong>
@@ -58,6 +60,7 @@ function ContactCard({ link }: { link: ContactLink }) {
     <a className="contact-card liquid-glass-card" href={link.href} target="_blank" rel="noreferrer">
       <div className="card-glass-glow" />
       <div className="card-fluid-blob" />
+      <div className="liquid-accent-layer" aria-hidden="true" />
       <Icon size={22} aria-hidden="true" />
       <div>
         <strong>{link.label}</strong>

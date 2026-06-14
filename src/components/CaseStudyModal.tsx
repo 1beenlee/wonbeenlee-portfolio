@@ -10,35 +10,35 @@ interface CaseStudyModalProps {
   initialSkillId?: string | null;
 }
 
-function ProductOpsDetailWorkflow({ isKo }: { isKo: boolean }) {
+function ProductOpsDetailWorkflow() {
   return (
     <div className="product-ops-detail-workflow">
       <div className="workflow-linear-steps">
         <div className="modal-workflow-step-wrapper">
           <div className="modal-workflow-step">
             <span className="step-num">01</span>
-            <p>{isKo ? "목표" : "Goal"}</p>
+            <p>Goal</p>
           </div>
           <span className="step-connector" aria-hidden="true">&rarr;</span>
         </div>
         <div className="modal-workflow-step-wrapper">
           <div className="modal-workflow-step">
             <span className="step-num">02</span>
-            <p>{isKo ? "이니셔티브" : "Initiative"}</p>
+            <p>Initiative</p>
           </div>
           <span className="step-connector" aria-hidden="true">&rarr;</span>
         </div>
         <div className="modal-workflow-step-wrapper">
           <div className="modal-workflow-step">
             <span className="step-num">03</span>
-            <p>{isKo ? "기능 묶음" : "Feature set"}</p>
+            <p>Feature set</p>
           </div>
           <span className="step-connector" aria-hidden="true">&rarr;</span>
         </div>
         <div className="modal-workflow-step-wrapper">
           <div className="modal-workflow-step">
             <span className="step-num">04</span>
-            <p>{isKo ? "기능" : "Feature"}</p>
+            <p>Feature</p>
           </div>
           <span className="step-connector" aria-hidden="true">&rarr;</span>
         </div>
@@ -52,11 +52,11 @@ function ProductOpsDetailWorkflow({ isKo }: { isKo: boolean }) {
           <div className="workflow-branches">
             <div className="modal-workflow-step branch-step">
               <span className="step-num">05a</span>
-              <p>{isKo ? "릴리즈 노트" : "Release note"}</p>
+              <p>Release note</p>
             </div>
             <div className="modal-workflow-step branch-step">
               <span className="step-num">05b</span>
-              <p>{isKo ? "릴리즈 데모" : "Release demo"}</p>
+              <p>Release demo</p>
             </div>
           </div>
         </div>
@@ -151,6 +151,16 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
     }
   };
 
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.currentTarget;
+    const scrollPercent = target.scrollTop / (target.scrollHeight - target.clientHeight || 1);
+    if (modalRef.current) {
+      modalRef.current.style.setProperty("--scroll-y", `${target.scrollTop}px`);
+      modalRef.current.style.setProperty("--scroll-percent", `${scrollPercent}`);
+    }
+  };
+
   // Safe checks for new copy fields
   const summaryText = caseItem.summary || caseItem.problem.substring(0, 100) + "...";
   const highlightPoints = caseItem.highlights || [];
@@ -168,8 +178,8 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
       data-timemachine={`case-modal-${caseItem.id}`}
     >
       <div className="modal-panel liquid-glass-card" ref={modalRef}>
-        <div className="card-glass-glow" />
         <div className="card-fluid-blob" />
+        <div className="liquid-accent-layer" aria-hidden="true" />
 
         <div className="modal-header">
           <div className="modal-title-area">
@@ -189,7 +199,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
           </button>
         </div>
 
-        <div className="modal-scroll-content" data-testid="case-modal-content">
+        <div className="modal-scroll-content" data-testid="case-modal-content" onScroll={handleScroll}>
           {/* Overview */}
           <section className="modal-section modal-overview">
             <p className="lead-summary">{summaryText}</p>
@@ -342,7 +352,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
           <section className="modal-section">
             <h3>{caseItem.previewTitle}</h3>
             {caseItem.id === "product-ops" ? (
-              <ProductOpsDetailWorkflow isKo={isKo} />
+              <ProductOpsDetailWorkflow />
             ) : caseItem.id === "ai-skills" ? (
               <AiSkillsEcosystemMap
                 locale={copy.meta.locale}

@@ -4,7 +4,9 @@ import {
   FileText,
   ShieldCheck,
   Linkedin,
-  X
+  X,
+  ChevronRight,
+  ChevronDown
 } from "lucide-react";
 import { canonicalProfile } from "./content/profile.shared";
 import type {
@@ -214,6 +216,21 @@ function App() {
           setConfirmOutlinkUrl(null);
         }}
       />
+      {/* Liquid Glass Refraction SVG Filters */}
+      <svg style={{ position: "absolute", width: 0, height: 0, pointerEvents: "none" }} aria-hidden="true">
+        <filter id="liquid-glass-refraction-core">
+          <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" seed="5" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="liquid-glass-refraction-sat">
+          <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" result="noise" seed="12" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="12" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="liquid-glass-refraction-cta">
+          <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="1" result="noise" seed="42" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
     </div>
   );
 }
@@ -319,6 +336,7 @@ function Writing({ copy, onOutlinkClick }: { copy: SiteCopy; onOutlinkClick: (ur
 }
 
 function Confidentiality({ copy }: { copy: SiteCopy }) {
+  const [isOpen, setIsOpen] = useState(false);
   const note = copy.sections.confidentiality.note;
 
   return (
@@ -328,13 +346,26 @@ function Confidentiality({ copy }: { copy: SiteCopy }) {
         title={copy.sections.confidentiality.title}
         body={copy.sections.confidentiality.body}
       />
-      <article className="confidentiality-card liquid-glass-card">
+      <article className={`confidentiality-card liquid-glass-card ${isOpen ? "is-open" : ""}`}>
         <div className="card-glass-glow" />
         <div className="card-fluid-blob" />
-        <div className="card-content confidentiality-layout">
-          <ShieldCheck size={24} aria-hidden="true" className="shield-icon" />
-          <div>
+        
+        <button 
+          className="confidentiality-header-btn" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+        >
+          <div className="confidentiality-header-left">
+            <ShieldCheck size={22} aria-hidden="true" className="shield-icon" />
             <h3>{note.title}</h3>
+          </div>
+          <div className="confidentiality-toggle-icon" aria-hidden="true">
+            {isOpen ? <ChevronDown size={20} /> : <ChevronRight size={20} />}
+          </div>
+        </button>
+
+        <div className={`confidentiality-body-wrapper ${isOpen ? "show" : ""}`}>
+          <div className="card-content confidentiality-layout">
             <p>{note.body}</p>
             <ul>
               {note.rules.map((rule) => (

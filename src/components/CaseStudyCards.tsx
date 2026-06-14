@@ -85,6 +85,7 @@ function CaseCard({
             className="primary-button case-cta-btn"
             data-testid={`case-open-${item.id}`}
           >
+            <span className="liquid-accent-layer" aria-hidden="true" />
             <span>{openLabel}</span>
             <span aria-hidden="true">&rarr;</span>
           </button>
@@ -103,7 +104,7 @@ function CaseCard({
               onSelectSkill={(skillName) => onOpenCase(item.id, skillName)}
             />
           ) : item.id === "product-ops" ? (
-            <ProductOpsTree locale={copy.meta.locale} />
+            <ProductOpsTree />
           ) : (
             <ol>
               {item.previewSteps.map((step, index) => (
@@ -185,15 +186,14 @@ export function AiSkillsEcosystemMap({
   );
 }
 
-function ProductOpsTree({ locale }: { locale: string }) {
-  const isKo = locale === "ko";
+function ProductOpsTree() {
   const nodes = [
-    { level: 0, prefix: "", label: isKo ? "목표" : "Goal" },
-    { level: 1, prefix: "└─ ", label: isKo ? "이니셔티브" : "Initiative" },
-    { level: 2, prefix: "    └─ ", label: isKo ? "기능 묶음" : "Feature set" },
-    { level: 3, prefix: "        └─ ", label: isKo ? "기능" : "Feature" },
-    { level: 4, prefix: "            ├─ ", label: isKo ? "릴리즈 노트" : "Release note", isRelease: true },
-    { level: 4, prefix: "            └─ ", label: isKo ? "릴리즈 데모" : "Release demo", isRelease: true }
+    { level: 0, prefix: "", label: "Goal" },
+    { level: 1, prefix: "└─ ", label: "Initiative" },
+    { level: 2, prefix: "    └─ ", label: "Feature set" },
+    { level: 3, prefix: "        └─ ", label: "Feature" },
+    { level: 4, prefix: "            ├─ ", label: "Release note", isRelease: true },
+    { level: 4, prefix: "            └─ ", label: "Release demo", isRelease: true }
   ];
 
   return (

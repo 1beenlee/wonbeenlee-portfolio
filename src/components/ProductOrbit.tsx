@@ -44,6 +44,7 @@ export function ProductOrbit() {
         <div className="orbit-core">
           <div className="core-glow" />
           <div className="core-inner">
+            <div className="liquid-accent-layer" aria-hidden="true" />
             <strong>AI</strong>
             <span>Product OS</span>
           </div>
@@ -55,6 +56,7 @@ export function ProductOrbit() {
         <div className="satellite-wrapper sat-srm">
           <div className="satellite-card" onMouseMove={handleMouseMove}>
             <div className="sat-card-glow" />
+            <div className="liquid-accent-layer" aria-hidden="true" />
             <div className="sat-card-content">
               <strong>SRM</strong>
               <ul>
@@ -70,6 +72,7 @@ export function ProductOrbit() {
         <div className="satellite-wrapper sat-s2p">
           <div className="satellite-card" onMouseMove={handleMouseMove}>
             <div className="sat-card-glow" />
+            <div className="liquid-accent-layer" aria-hidden="true" />
             <div className="sat-card-content">
               <strong>S2P</strong>
               <ul>
@@ -85,6 +88,7 @@ export function ProductOrbit() {
         <div className="satellite-wrapper sat-data">
           <div className="satellite-card" onMouseMove={handleMouseMove}>
             <div className="sat-card-glow" />
+            <div className="liquid-accent-layer" aria-hidden="true" />
             <div className="sat-card-content">
               <strong>Data & Integrations</strong>
               <ul>
@@ -100,6 +104,7 @@ export function ProductOrbit() {
         <div className="satellite-wrapper sat-intel">
           <div className="satellite-card" onMouseMove={handleMouseMove}>
             <div className="sat-card-glow" />
+            <div className="liquid-accent-layer" aria-hidden="true" />
             <div className="sat-card-content">
               <strong>Intelligence Layer</strong>
               <ul>

@@ -506,7 +506,7 @@ export const internalEn: SiteCopy = {
     },
     writing: {
       kicker: "Writing / LinkedIn",
-      title: "Writing signals the same operating philosophy.",
+      title: "Sharing learning and philosophy through writing.",
       body:
         "My public writing focuses on bringing AI into real product planning work: context quality, repeatable workflows, team capability, verification, and governance.",
       items: [
@@ -521,9 +521,9 @@ export const internalEn: SiteCopy = {
             "AI becomes real when it moves from impressive one-off outputs to repeatable workflows that teams can inspect."
         },
         {
-          title: "Public profile anchor",
+          title: "Sharing experiences",
           body:
-            "LinkedIn and GitHub are the external anchors for writing, contact, and public product-adjacent work."
+            "Writing and sharing real learnings gained by observing, listening, and experimenting across various channels."
         }
       ]
     },

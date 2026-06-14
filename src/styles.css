@@ -199,6 +199,210 @@ button, a {
   opacity: 0.55;
 }
 
+/* ==========================================================================
+   3a. Liquid Glass Refined Accents & Performance Optimizations
+   ========================================================================== */
+.liquid-accent-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  contain: paint;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.01);
+  transition: opacity 300ms ease, backdrop-filter 300ms ease;
+  will-change: backdrop-filter, opacity;
+}
+
+/* 1. Orbit Core */
+.core-inner {
+  overflow: hidden;
+}
+.core-inner .liquid-accent-layer {
+  backdrop-filter: url(#liquid-glass-refraction-core) blur(16px);
+  -webkit-backdrop-filter: url(#liquid-glass-refraction-core) blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.1);
+}
+
+/* 2. Satellite Cards */
+.satellite-card {
+  overflow: hidden;
+}
+.satellite-card .liquid-accent-layer {
+  backdrop-filter: blur(2px) saturate(120%);
+  -webkit-backdrop-filter: blur(2px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  opacity: 0.8;
+}
+.satellite-card:hover .liquid-accent-layer {
+  backdrop-filter: url(#liquid-glass-refraction-sat) blur(8px) saturate(140%);
+  -webkit-backdrop-filter: url(#liquid-glass-refraction-sat) blur(8px) saturate(140%);
+  opacity: 1;
+}
+
+/* 3. Case Study CTA Button */
+.case-cta-btn {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: var(--ink) !important;
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    var(--shadow-soft) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background 300ms ease, border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease !important;
+}
+.case-cta-btn:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: var(--teal) !important;
+  box-shadow: 
+    0 8px 24px var(--teal-soft),
+    inset 0 1px 1px rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-2px);
+}
+[data-theme="teal"] .case-cta-btn:hover {
+  border-color: var(--teal) !important;
+}
+.case-cta-btn .liquid-accent-layer {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0.5;
+}
+.case-cta-btn:hover .liquid-accent-layer {
+  backdrop-filter: url(#liquid-glass-refraction-cta) blur(6px);
+  -webkit-backdrop-filter: url(#liquid-glass-refraction-cta) blur(6px);
+  opacity: 0.9;
+}
+
+/* 4. Modal Panel Refraction & Readability */
+.modal-panel .liquid-accent-layer {
+  backdrop-filter: blur(28px) saturate(110%);
+  -webkit-backdrop-filter: blur(28px) saturate(110%);
+  opacity: 0.95;
+  /* 스크롤 포지션에 맞춰 굴절 레이어가 미세하게 움직이도록 함 */
+  transform: translate3d(0, calc(var(--scroll-percent, 0) * -15px), 0);
+  transition: transform 120ms ease-out;
+}
+.modal-panel .card-fluid-blob {
+  opacity: 0.15 !important;
+  filter: blur(90px) !important;
+  mix-blend-mode: screen;
+  /* 스크롤에 따른 미세한 Y축 패럴랙스 움직임 부여 */
+  transform: translateY(calc(var(--scroll-percent, 0) * -60px)) scale(1.1);
+  transition: transform 200ms ease-out;
+}
+.modal-panel .card-glass-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle 350px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(96, 165, 250, 0.12) 0%,
+    rgba(96, 165, 250, 0.08) 25%,
+    rgba(96, 165, 250, 0.04) 50%,
+    rgba(96, 165, 250, 0.015) 75%,
+    rgba(96, 165, 250, 0.005) 90%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+[data-theme="teal"] .modal-panel .card-glass-glow {
+  background: radial-gradient(
+    circle 350px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(45, 212, 191, 0.12) 0%,
+    rgba(45, 212, 191, 0.08) 25%,
+    rgba(45, 212, 191, 0.04) 50%,
+    rgba(45, 212, 191, 0.015) 75%,
+    rgba(45, 212, 191, 0.005) 90%,
+    transparent 100%
+  );
+}
+.modal-panel:hover .card-glass-glow {
+  opacity: 1;
+}
+.modal-header,
+.modal-scroll-content {
+  position: relative;
+  z-index: 2;
+}
+.modal-header {
+  overflow: visible;
+}
+
+/* 5. Contact CTA Cards */
+.contact-card {
+  overflow: hidden;
+}
+.contact-card .liquid-accent-layer {
+  opacity: 0;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+@media (hover: hover) {
+  .contact-card:hover .liquid-accent-layer {
+    opacity: 1;
+    backdrop-filter: url(#liquid-glass-refraction-sat) blur(14px);
+    -webkit-backdrop-filter: url(#liquid-glass-refraction-sat) blur(14px);
+  }
+}
+
+/* 6. Performance & Accessibility Fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  .liquid-accent-layer {
+    will-change: auto;
+  }
+  .core-inner .liquid-accent-layer,
+  .satellite-card .liquid-accent-layer,
+  .satellite-card:hover .liquid-accent-layer,
+  .case-cta-btn .liquid-accent-layer,
+  .case-cta-btn:hover .liquid-accent-layer,
+  .modal-panel .liquid-accent-layer,
+  .contact-card:hover .liquid-accent-layer {
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+  }
+}
+
+/* Mobile & Touch Devices Optimization */
+@media (max-width: 768px) {
+  .liquid-accent-layer {
+    will-change: auto;
+  }
+  .core-inner .liquid-accent-layer {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+  .satellite-card .liquid-accent-layer {
+    backdrop-filter: blur(4px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(4px) saturate(120%) !important;
+  }
+  .satellite-card:hover .liquid-accent-layer {
+    backdrop-filter: blur(6px) saturate(130%) !important;
+    -webkit-backdrop-filter: blur(6px) saturate(130%) !important;
+  }
+  .case-cta-btn .liquid-accent-layer,
+  .case-cta-btn:hover .liquid-accent-layer {
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+  }
+  .modal-panel .liquid-accent-layer {
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+  }
+  .contact-card:hover .liquid-accent-layer {
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+}
+
 /* Background fluid blobs for major sections */
 .liquid-glass-background {
   position: absolute;
@@ -701,8 +905,8 @@ button, a {
 .orbit-core {
   position: relative;
   z-index: 10;
-  width: 100px;
-  height: 100px;
+  width: 124px;
+  height: 124px;
 }
 
 .orbit-refraction-material {
@@ -738,8 +942,8 @@ button, a {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1.5px solid rgba(96, 165, 250, 0.35);
+  background: rgba(255, 255, 255, 0.005) !important;
+  border: 1.5px solid rgba(96, 165, 250, 0.12);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 
@@ -754,10 +958,12 @@ button, a {
 }
 
 [data-theme="teal"] .core-inner {
-  border-color: rgba(45, 212, 191, 0.35);
+  border-color: rgba(45, 212, 191, 0.12);
 }
 
 .core-inner strong {
+  position: relative;
+  z-index: 2;
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--teal);
@@ -766,6 +972,8 @@ button, a {
 }
 
 .core-inner span {
+  position: relative;
+  z-index: 2;
   font-size: 0.65rem;
   font-weight: 700;
   color: var(--muted);
@@ -1867,44 +2075,108 @@ button, a {
 }
 
 .confidentiality-card {
-  padding: 28px;
+  padding: 0 !important;
   margin-top: 40px;
 }
 
-.confidentiality-layout {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-  gap: 20px;
-  align-items: start;
+.confidentiality-header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--ink);
+  outline: none;
+  z-index: 2;
+  position: relative;
+  transition: color 200ms ease;
 }
 
-.shield-icon {
+.confidentiality-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.confidentiality-header-left h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--ink);
+  transition: color 200ms ease;
+}
+
+.confidentiality-header-btn .shield-icon {
+  color: var(--muted);
+  transition: color 200ms ease;
+}
+
+.confidentiality-toggle-icon {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.confidentiality-header-btn:hover .confidentiality-header-left h3 {
+  color: var(--teal);
+}
+.confidentiality-header-btn:hover .shield-icon,
+.confidentiality-header-btn:hover .confidentiality-toggle-icon {
   color: var(--teal);
 }
 
-.confidentiality-card h3 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 12px;
+.confidentiality-body-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 350ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease;
+  z-index: 2;
+  position: relative;
 }
 
-.confidentiality-card p {
+.confidentiality-body-wrapper.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.confidentiality-body-wrapper .confidentiality-layout {
+  padding: 0 28px 28px 72px;
+}
+
+.confidentiality-body-wrapper p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: var(--muted);
-  margin-bottom: 20px;
+  margin: 0 0 16px 0;
 }
 
-.confidentiality-card ul {
+.confidentiality-body-wrapper ul {
   margin: 0;
-  padding-left: 20px;
+  padding: 0;
+  list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+}
+
+.confidentiality-body-wrapper li {
   font-size: 0.9rem;
-  line-height: 1.5;
   color: var(--muted);
+  position: relative;
+  padding-left: 14px;
+}
+
+.confidentiality-body-wrapper li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--teal);
 }
 
 /* ==========================================================================
@@ -2520,9 +2792,9 @@ body.modal-open {
   right: 0;
   bottom: 0;
   z-index: 100;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(4, 7, 16, 0.35);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2536,7 +2808,7 @@ body.modal-open {
   max-height: 85vh;
   display: flex;
   flex-direction: column;
-  background: rgba(10, 16, 32, 0.9);
+  background: rgba(10, 16, 32, 0.45) !important;
   border: 1px solid var(--line-strong);
   border-radius: 16px;
   box-shadow: 0 32px 64px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.1);
@@ -2546,7 +2818,7 @@ body.modal-open {
 }
 
 [data-theme="teal"] .modal-panel {
-  background: rgba(17, 26, 30, 0.9);
+  background: rgba(17, 26, 30, 0.45) !important;
 }
 
 .modal-header {
