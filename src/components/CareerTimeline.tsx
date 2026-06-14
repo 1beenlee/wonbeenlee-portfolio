@@ -17,8 +17,8 @@ export function CareerTimeline({ copy }: { copy: SiteCopy }) {
         <div className="timeline-line-bg" />
         
         <div className="timeline-events-grid">
-          {data.events.map((event) => (
-            <div key={event.period} className="timeline-event-card liquid-glass-card">
+          {data.events.map((event, idx) => (
+            <div key={event.period} className={`timeline-event-card liquid-glass-card ${idx === 0 ? "is-current-position" : ""}`}>
               <div className="card-glass-glow" />
               <div className="card-fluid-blob" />
               
@@ -36,6 +36,11 @@ export function CareerTimeline({ copy }: { copy: SiteCopy }) {
                     <Briefcase size={13} aria-hidden="true" />
                     {event.company}
                   </span>
+                  {idx === 0 && (
+                    <span className="timeline-current-badge">
+                      {copy.meta.locale === "ko" ? "현재" : "Current"}
+                    </span>
+                  )}
                 </div>
                 
                 <h3>{event.role}</h3>

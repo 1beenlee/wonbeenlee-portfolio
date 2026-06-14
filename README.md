@@ -1,22 +1,25 @@
-# Portfolio Deployment Release
+# Personal Knowledge Base & Portfolio Source
 
-Wonbeen Lee의 공개 포트폴리오 웹사이트 배포를 전용으로 관리하는 저장소입니다.
+Wonbeen Lee의 개인 지식 베이스(Personal Knowledge Base) 및 포트폴리오 웹사이트 개발을 위한 중심 저장소입니다.
 
-## 저장소 역할 및 동기화 정책 (Repository Role & Sync Policy)
+## 저장소 역할 및 작업 흐름 (Repository Role & Workflow)
 
-⚠️ **경고**: 이 저장소(`wonbeenlee-portfolio`)에서 코드를 **직접 수정하지 마십시오.**
+이 저장소(`wbeen-personal-kb`)는 모든 개발 작업과 문서 작성의 **단일 진실 공급원(Single Source of Truth, SSOT)**입니다.
 
-이 저장소는 오직 공개 웹사이트 배포를 위한 릴리스 용도로만 사용됩니다. 모든 작업의 중심이자 단일 진실 공급원(SSOT)은 로컬의 **`wbeen-personal-kb`** 저장소입니다.
+### 🔄 배포 및 동기화 흐름 (Sync & Deployment)
 
-### 🔄 동기화 및 배포 절차
+모든 작업은 **반드시 이 폴더 내에서만 수행**해야 합니다. 배포 전용 저장소인 `wonbeenlee-portfolio`로 직접 가셔서 코드를 수정하지 마십시오.
 
-코드를 업데이트하여 실제 서비스에 배포하고 싶을 때는 항상 다음 절차를 따릅니다.
-
-1. **로컬 `wbeen-personal-kb` 폴더**에서 문서 변경 및 개발 작업을 수행하고 검증합니다.
-2. 로컬에서 빌드 테스트(`npm run build`)가 정상 완료된 것을 확인합니다.
-3. 비밀 파일이 제외된 공개 소스 코드들을 이 폴더(`wonbeenlee-portfolio`)에 복사하여 덮어씁니다.
-4. 이 폴더에서 `main` 브랜치에 변경 사항을 커밋하고 `origin main`으로 Push합니다.
-5. Vercel이 Push를 감지하여 자동으로 프로덕션 배포를 완료합니다.
+1. **로컬 작업 및 검증**:
+   - 이 폴더에서 기능 개발, 이력 변경 및 검증을 완료합니다.
+   - 로컬 구동에 필요한 비밀 정보(`.wbeen-secrets` 등)는 이 로컬 폴더에만 안전하게 남겨두고 작업합니다.
+2. **지식 베이스 백업**:
+   - 수정 사항을 원격 저장소 `1beenlee/wbeen-personal-kb`에 커밋/푸시합니다. (비밀 정보는 `.gitignore`에 의해 자동으로 업로드에서 제외됩니다.)
+3. **포트폴리오 배포 저장소로 복사**:
+   - 검증이 완료된 공개용 코드만 `C:\Users\s_talentlee52\wonbeenlee-portfolio` 폴더로 복사합니다.
+4. **최종 배포**:
+   - 복사 완료 후 `wonbeenlee-portfolio` 폴더에서 `1beenlee/wonbeenlee-portfolio` 저장소로 push합니다.
+   - Vercel이 push된 신규 코드를 감지하여 자동으로 실제 사이트에 배포를 반영합니다.
 
 ---
 
@@ -39,6 +42,7 @@ npm run dev
 ```powershell
 npm run lint:copy
 npm run lint
+npm run build
 ```
 
 ## Content Model

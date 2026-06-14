@@ -12,12 +12,13 @@ export function ProductOrbit() {
   return (
     <div className="product-orbit-container" aria-hidden="true">
       <div className="orbit-wrapper">
+        <div className="orbit-refraction-material" />
         <div className="orbit-bg-glow" />
         <svg className="orbit-svg" viewBox="0 0 500 500">
           {/* Group 1: Rotated by -15deg */}
           <g transform="rotate(-15 250 250)">
             <path className="orbit-path path-1" d="M 50,250 a 200,70 0 1,0 400,0 a 200,70 0 1,0 -400,0" fill="none" />
-            <circle r="4.5" className="orbit-dot dot-1">
+            <circle cx="0" cy="0" r="4.5" className="orbit-dot dot-1">
               <animateMotion dur="18s" repeatCount="indefinite" path="M 50,250 a 200,70 0 1,0 400,0 a 200,70 0 1,0 -400,0" />
             </circle>
           </g>
@@ -25,7 +26,7 @@ export function ProductOrbit() {
           {/* Group 2: Rotated by 25deg */}
           <g transform="rotate(25 250 250)">
             <path className="orbit-path path-2" d="M 70,250 a 180,100 0 1,0 360,0 a 180,100 0 1,0 -360,0" fill="none" />
-            <circle r="4.5" className="orbit-dot dot-2">
+            <circle cx="0" cy="0" r="4.5" className="orbit-dot dot-2">
               <animateMotion dur="24s" repeatCount="indefinite" path="M 70,250 a 180,100 0 1,0 360,0 a 180,100 0 1,0 -360,0" />
             </circle>
           </g>
@@ -33,7 +34,7 @@ export function ProductOrbit() {
           {/* Group 3: Rotated by 60deg */}
           <g transform="rotate(60 250 250)">
             <path className="orbit-path path-3" d="M 30,250 a 220,50 0 1,0 440,0 a 220,50 0 1,0 -440,0" fill="none" />
-            <circle r="4.5" className="orbit-dot dot-3">
+            <circle cx="0" cy="0" r="4.5" className="orbit-dot dot-3">
               <animateMotion dur="20s" repeatCount="indefinite" path="M 30,250 a 220,50 0 1,0 440,0 a 220,50 0 1,0 -440,0" />
             </circle>
           </g>
@@ -48,7 +49,7 @@ export function ProductOrbit() {
           </div>
         </div>
 
-        {/* Satellite Cards (Liquid Glass style) */}
+        {/* Satellite Cards */}
         
         {/* SRM Card */}
         <div className="satellite-wrapper sat-srm">

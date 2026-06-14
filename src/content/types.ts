@@ -22,6 +22,15 @@ export type EvidenceMetric = {
   note: string;
 };
 
+export type CaseStudySkillItem = {
+  name: string;
+  version: string;
+  updatedAt: string;
+  description: string;
+  principle: string;
+  impact?: string;
+};
+
 export type CaseStudy = {
   id: string;
   label: string;
@@ -34,6 +43,10 @@ export type CaseStudy = {
   previewTitle: string;
   previewSteps: string[];
   tags: string[];
+  summary?: string;
+  highlights?: string[];
+  cardMetrics?: { value?: string; label: string }[];
+  skillsList?: CaseStudySkillItem[];
 };
 
 export type TimelineEvent = {
@@ -54,6 +67,7 @@ export type OperatingStackItem = {
   tool: string;
   capability: string;
   evidence: string;
+  hidden?: boolean;
 };
 
 export type ConfidentialityNote = {
