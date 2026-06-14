@@ -497,16 +497,30 @@ function useActiveSection(hrefs: string[]) {
 function useDocumentMeta(title: string, description: string, locale: Locale) {
   useEffect(() => {
     document.title = title;
-    
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement("meta");
-      metaDescription.setAttribute("name", "description");
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute("content", description);
-    
     document.documentElement.lang = locale;
+
+    const setMetaTag = (attrName: string, attrVal: string, content: string) => {
+      let meta = document.querySelector(`meta[${attrName}="${attrVal}"]`);
+      if (!meta) {
+        meta = document.createElement("meta");
+        meta.setAttribute(attrName, attrVal);
+        document.head.appendChild(meta);
+      }
+      meta.setAttribute("content", content);
+    };
+
+    // Standard meta description
+    setMetaTag("name", "description", description);
+
+    // Open Graph meta tags
+    setMetaTag("property", "og:title", title);
+    setMetaTag("property", "og:description", description);
+    setMetaTag("property", "og:url", window.location.href);
+
+    // Twitter card meta tags
+    setMetaTag("property", "twitter:title", title);
+    setMetaTag("property", "twitter:description", description);
+    setMetaTag("property", "twitter:url", window.location.href);
   }, [title, description, locale]);
 }
 
