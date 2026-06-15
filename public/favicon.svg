@@ -1,4 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WL">
-  <rect width="64" height="64" rx="12" fill="#26332f"/>
-  <path d="M13 18h6l5 20 6-20h5l6 20 5-20h6L44 47h-6l-6-20-6 20h-6L13 18Z" fill="#f7f8f6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WL Personal Logo">
+  <defs>
+    <!-- Background Gradient: Deep Dark Navy -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050814" />
+      <stop offset="50%" stop-color="#0c1126" />
+      <stop offset="100%" stop-color="#181e3a" />
+    </linearGradient>
+    
+    <!-- WL Accent Gradient: Elegant Silver/Cyan White -->
+    <linearGradient id="wl-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <!-- Orbit Ring Gradient: Cyan to Teal & Blue -->
+    <linearGradient id="orbit-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#14b8a6" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+
+    <!-- Soft Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Rounded Squircle Background -->
+  <rect width="64" height="64" rx="16" fill="url(#bg-grad)" />
+
+  <!-- Outer Orbit Glow (Subtle Neon Effect) -->
+  <ellipse cx="32" cy="32" rx="26" ry="6.5" transform="rotate(-28 32 32)" fill="none" stroke="url(#orbit-grad)" stroke-width="1.2" opacity="0.35" filter="url(#glow)" />
+  
+  <!-- Outer Orbit Ring (Dashed for technological styling) -->
+  <ellipse cx="32" cy="32" rx="26" ry="6.5" transform="rotate(-28 32 32)" fill="none" stroke="url(#orbit-grad)" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="80 30" />
+
+  <!-- Monogram WL (Stylized Connected Line Art) -->
+  <g transform="translate(1, 1)">
+    <!-- W Path -->
+    <path d="M16 22 L22 41 L27.5 28.5 L33 41 L39 22" fill="none" stroke="url(#wl-grad)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- L Path (connected elegantly behind the W) -->
+    <path d="M36 26 L36 41 L47 41" fill="none" stroke="url(#wl-grad)" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
 </svg>

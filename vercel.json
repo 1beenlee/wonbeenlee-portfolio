@@ -4,6 +4,14 @@
   "installCommand": "npm install",
   "rewrites": [
     {
+      "source": "/en",
+      "destination": "/index.en.html"
+    },
+    {
+      "source": "/public/en",
+      "destination": "/index.en.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
