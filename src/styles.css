@@ -2669,6 +2669,30 @@ button, a {
   animation: pulse-bg-teal 1.2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* Skill details panel specific pulse highlight */
+.skill-details-panel.pulse-highlight {
+  animation: skill-pulse-border 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.skill-details-panel.pulse-highlight .skill-details-name {
+  animation: pulse-title 2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes skill-pulse-border {
+  0% {
+    border-color: var(--teal);
+    box-shadow: 0 0 10px rgba(45, 212, 191, 0.1), inset 0 0 20px rgba(45, 212, 191, 0.05);
+  }
+  30% {
+    border-color: var(--teal);
+    box-shadow: 0 0 25px rgba(45, 212, 191, 0.4), inset 0 0 40px rgba(45, 212, 191, 0.15);
+  }
+  100% {
+    border-color: var(--line-strong);
+    box-shadow: none;
+  }
+}
+
 /* ==========================================================================
    21. Case Study Summary Card & Detail Modal Custom Styles
    ========================================================================== */
@@ -3374,6 +3398,57 @@ body.modal-open {
   background: var(--line-strong);
 }
 
+/* Transposed Ecosystem Map styles (Column layout) */
+.ecosystem-map-v3.column-layout {
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+}
+
+.ecosystem-column-v3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.ecosystem-column-v3 .stage-label-v3.header-node {
+  width: 100%;
+  max-width: 100px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.stage-nodes-v3.vertical-stack {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+}
+
+.stage-nodes-v3.vertical-stack .ecosystem-node-v3 {
+  width: 100%;
+  max-width: 115px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.ecosystem-column-connector-v3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  color: var(--line-strong);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.column-connector-arrow {
+  margin-top: -30px; /* Align arrow vertically with vertical node stack center */
+}
+
 /* Product Ops Tree Structure */
 .product-ops-tree {
   flex: 1;
@@ -3882,24 +3957,22 @@ body.modal-open {
   border-bottom-color: var(--accent);
 }
 
-.outlink-arrow {
+.outlink-icon {
   display: inline-block;
-  font-size: 0.65em;
-  vertical-align: super;
-  margin-left: 3.5px;
-  color: #ffffff !important;
-  font-weight: 900;
-  text-shadow: 0.3px 0 0 currentColor, 0 0.3px 0 currentColor, 0.3px 0.3px 0 currentColor;
+  margin-left: 4px;
+  vertical-align: middle;
+  color: var(--line-strong) !important;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.hero-caidentia-link .outlink-arrow {
-  color: #ffffff !important;
+.hero-caidentia-link .outlink-icon {
+  color: var(--line-strong) !important;
+  margin-bottom: 2px;
 }
 
-.hero-caidentia-link:hover .outlink-arrow {
+.hero-caidentia-link:hover .outlink-icon {
   color: var(--teal) !important;
-  transform: translate(2px, -2px);
+  transform: translate(1px, -1px);
 }
 
 /* Responsive styling for Operating Stack layout (max-width: 768px) */
@@ -3935,7 +4008,7 @@ body.modal-open {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2), 0 0 14px rgba(45, 212, 191, 0.15) !important;
 }
 
-.clickable-pillar-card:hover .outlink-arrow {
+.clickable-pillar-card:hover .outlink-icon {
   color: var(--teal) !important;
-  transform: translate(2px, -2px);
+  transform: translate(1px, -1px);
 }

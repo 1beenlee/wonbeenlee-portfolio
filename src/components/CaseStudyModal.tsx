@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, Fragment } from "react";
+import { useState, useEffect, useRef, Fragment, useCallback } from "react";
 import { X, LockKeyhole, CheckCircle2 } from "lucide-react";
 import type { SiteCopy } from "../content/types";
 import { AiSkillsEcosystemMap } from "./CaseStudyCards";
@@ -78,6 +78,43 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
     return 0;
   });
 
+  const [pulseActive, setPulseActive] = useState(false);
+  const pulseTimeoutRef = useRef<number | null>(null);
+  const removePulseTimeoutRef = useRef<number | null>(null);
+
+  // Trigger pulse-highlight animation on target element with support for delayed triggers
+  const triggerPulse = useCallback((delayMs: number) => {
+    if (pulseTimeoutRef.current) clearTimeout(pulseTimeoutRef.current);
+    if (removePulseTimeoutRef.current) clearTimeout(removePulseTimeoutRef.current);
+
+    setPulseActive(false);
+
+    pulseTimeoutRef.current = window.setTimeout(() => {
+      setPulseActive(true);
+      removePulseTimeoutRef.current = window.setTimeout(() => {
+        setPulseActive(false);
+      }, 2000);
+    }, delayMs);
+  }, []);
+
+  // Set selected skill and decide if we need to auto-scroll with delayed highlight pulse
+  const selectSkill = useCallback((idx: number, shouldScroll: boolean) => {
+    setActiveSkillIdx(idx);
+    if (shouldScroll) {
+      if (scrollContentRef.current && explorerRef.current) {
+        const container = scrollContentRef.current;
+        const target = explorerRef.current;
+        const containerRect = container.getBoundingClientRect();
+        const targetRect = target.getBoundingClientRect();
+        const relativeTop = targetRect.top - containerRect.top + container.scrollTop;
+        container.scrollTo({ top: relativeTop, behavior: "smooth" });
+      }
+      triggerPulse(600); // 600ms match the average smooth scroll duration
+    } else {
+      triggerPulse(0); // Instant pulse on tab click
+    }
+  }, [triggerPulse]);
+
   const isKo = copy.meta.locale === "ko";
   const explorerTitle = isKo ? "구축된 AI 스킬 탐색기 (10종)" : "AI Skills Explorer (10 Tools)";
   const versionLabel = isKo ? "버전" : "Version";
@@ -102,6 +139,55 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
       document.body.classList.remove("modal-open");
     };
   }, []);
+
+  const explorerRef = useRef<HTMLDivElement>(null);
+  const scrollContentRef = useRef<HTMLDivElement>(null);
+  const selectorListRef = useRef<HTMLDivElement>(null);
+
+  // Auto-scroll the left selector list to keep the active skill tab visible and centered
+  useEffect(() => {
+    if (selectorListRef.current) {
+      const listContainer = selectorListRef.current;
+      const timer = setTimeout(() => {
+        const activeBtn = listContainer.querySelector('.skill-selector-btn.is-active') as HTMLElement;
+        if (activeBtn) {
+          const containerRect = listContainer.getBoundingClientRect();
+          const btnRect = activeBtn.getBoundingClientRect();
+          
+          const isVisible = (btnRect.top >= containerRect.top) && (btnRect.bottom <= containerRect.bottom);
+          
+          if (!isVisible) {
+            const relativeTop = btnRect.top - containerRect.top + listContainer.scrollTop;
+            const targetScrollTop = relativeTop - (listContainer.clientHeight / 2) + (activeBtn.clientHeight / 2);
+            
+            listContainer.scrollTo({
+              top: Math.max(0, targetScrollTop),
+              behavior: "smooth"
+            });
+          }
+        }
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [activeSkillIdx]);
+
+  // Auto-scroll to AI Skills Explorer when modal opens with an initial skill selection
+  useEffect(() => {
+    if (caseItem?.id === "ai-skills" && initialSkillId && explorerRef.current) {
+      const timer = setTimeout(() => {
+        if (scrollContentRef.current && explorerRef.current) {
+          const container = scrollContentRef.current;
+          const target = explorerRef.current;
+          const containerRect = container.getBoundingClientRect();
+          const targetRect = target.getBoundingClientRect();
+          const relativeTop = targetRect.top - containerRect.top + container.scrollTop;
+          container.scrollTo({ top: relativeTop, behavior: "smooth" });
+        }
+      }, 150);
+      triggerPulse(750); // 150ms mount delay + 600ms scroll duration
+      return () => clearTimeout(timer);
+    }
+  }, [caseItem?.id, initialSkillId, triggerPulse]);
 
   // Keyboard navigation listener (ESC key) and Focus Trap
   useEffect(() => {
@@ -199,7 +285,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
           </button>
         </div>
 
-        <div className="modal-scroll-content" data-testid="case-modal-content" onScroll={handleScroll}>
+        <div className="modal-scroll-content" data-testid="case-modal-content" onScroll={handleScroll} ref={scrollContentRef}>
           {/* Overview */}
           <section className="modal-section modal-overview">
             <p className="lead-summary">{summaryText}</p>
@@ -266,13 +352,13 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
 
           {/* AI Skills Explorer */}
           {caseItem.skillsList && caseItem.skillsList.length > 0 && (
-            <section className="modal-section skills-explorer-section">
+            <section className="modal-section skills-explorer-section" ref={explorerRef}>
               <h3>{explorerTitle}</h3>
               <p className="skills-explorer-intro">{exploreInstructions}</p>
               
               <div className="skills-explorer-layout">
                 {/* Left panel: list of skills */}
-                <div className="skills-selector-list" role="tablist" aria-label="AI Skills List">
+                <div className="skills-selector-list" ref={selectorListRef} role="tablist" aria-label="AI Skills List">
                   {caseItem.skillsList.map((skill, idx) => {
                     const isActive = idx === activeSkillIdx;
                     return (
@@ -282,7 +368,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
                         aria-selected={isActive}
                         aria-controls={`skill-panel-${skill.name}`}
                         id={`skill-tab-${skill.name}`}
-                        onClick={() => setActiveSkillIdx(idx)}
+                        onClick={() => selectSkill(idx, false)}
                         className={`skill-selector-btn ${isActive ? "is-active" : ""}`}
                       >
                         <span className="skill-selector-name">{skill.name}</span>
@@ -303,7 +389,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
                       id={`skill-panel-${activeSkill.name}`}
                       role="tabpanel"
                       aria-labelledby={`skill-tab-${activeSkill.name}`}
-                      className="skill-details-panel"
+                      className={`skill-details-panel ${pulseActive ? "pulse-highlight" : ""}`}
                     >
                       <div className="skill-details-header">
                         <div className="skill-details-title-row">
@@ -360,9 +446,10 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
                 onSelectSkill={(skillName) => {
                   const idx = caseItem.skillsList?.findIndex((s) => s.name === skillName);
                   if (idx !== undefined && idx !== -1) {
-                    setActiveSkillIdx(idx);
+                    selectSkill(idx, true);
                   }
                 }}
+                isColumnLayout={true}
               />
             ) : (
               <div className="modal-workflow-diagram">

@@ -1,5 +1,4 @@
-import { MouseEvent } from "react";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, ExternalLink } from "lucide-react";
 import { canonicalProfile } from "../content/profile.shared";
 import type { SiteCopy } from "../content/types";
 import { ProductOrbit } from "./ProductOrbit";
@@ -49,7 +48,7 @@ export function Hero({
                     rel="noopener noreferrer"
                   >
                     Caidentia
-                    <span className="outlink-arrow">↗</span>
+                    <ExternalLink size={14} className="outlink-icon" />
                   </a>
                   {titleParts[1]}
                 </>

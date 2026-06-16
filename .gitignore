@@ -22,7 +22,3 @@ project_sources_original_backup_*.zip
 .idea/
 Thumbs.db
 .DS_Store
-
-# Local testing and temp assets
-/*.png
-/Time Machine/

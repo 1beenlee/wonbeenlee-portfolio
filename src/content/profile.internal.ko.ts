@@ -450,18 +450,18 @@ export const internalKo: SiteCopy = {
       body: "테크니컬 라이터 시절 다진 체계적인 문서 구조화 능력과 부서 간 정렬 역량을 바탕으로, 복잡한 엔터프라이즈 SaaS 제품의 기획과 운영체계를 설계하는 Product Manager로 전환하여 성과를 만들어내고 있습니다.",
       events: [
         {
-          period: "2023 - 현재",
+          period: "2025 - 현재",
           role: "Global Product Manager",
           company: "emro",
           description: "AI 기반 SRM/S2P SaaS 제품인 Caidentia의 글로벌 제품 기획, Jira 기반 Product Ops 체계 구축, 에이전트 AI 설계 및 시장 대응 데모 시나리오를 주도하고 있습니다.",
-          skills: ["제품 전략 및 로드맵", "Jira/Confluence 운영", "Agentic AI 기획"]
+          skills: ["제품 전략 및 로드맵", "Jira/Confluence 운영", "Agentic AI 기획", "커뮤니케이션 정렬"]
         },
         {
-          period: "2021 - 2023",
+          period: "2024 - 2025",
           role: "Technical Writer",
           company: "emro",
           description: "복잡한 제품의 요구사항을 명확히 정의하고 개발자와 사업 부서 간 소통 비용을 낮추는 체계적인 제품 스펙 설계 및 기획 산출물을 작성했습니다.",
-          skills: ["문서 구조화", "요구사항 분석", "커뮤니케이션 정렬"]
+          skills: ["문서 구조화", "요구사항 분석", "다국어(i18n) 관리", "제품 문서화"]
         }
       ]
     },

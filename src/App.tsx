@@ -6,7 +6,8 @@ import {
   Linkedin,
   X,
   ChevronRight,
-  ChevronDown
+  ChevronDown,
+  ExternalLink
 } from "lucide-react";
 import { canonicalProfile } from "./content/profile.shared";
 import type {
@@ -413,7 +414,7 @@ function PillarGrid({
               <div className="card-content">
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", width: "100%" }}>
                   <FileText size={22} aria-hidden="true" className="pillar-icon" />
-                  <span className="outlink-arrow" style={{ fontSize: "1.1em", marginTop: "-2px" }}>↗</span>
+                  <ExternalLink size={14} className="outlink-icon" />
                 </div>
                 <h3>{item.title}</h3>
                 <p>{item.body}</p>
@@ -526,45 +527,98 @@ function useDocumentMeta(title: string, description: string, locale: Locale) {
 
 export default App;
 
-const linkedinArticles = [
+const linkedinArticlesKo = [
+  {
+    part: "Part 1",
+    date: "2026.02.24",
+    title: "AI 도입이 프로세스 재설계를 강제한 이유",
+    hookingSentence: "AI는 단순히 기획을 빠르게 만든 것이 아니라, 오히려 불일치(misalignment)를 대규모로 더 쉽게 만들었습니다.",
+    summary: "문서 초안 작성이 쉬워짐에 따라 병목 지점은 이제 맥락 파악, 검증, 그리고 부서 간 정렬로 이동했습니다. 결국 AI 도입은 단순한 도구의 선택이 아니라, 제품 개발의 전체 운영 모델을 재설계하는 과정이어야 합니다.",
+    image: `${import.meta.env.BASE_URL}linkedin-part1.webp`,
+    url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-1-why-adoption-lee-sx3hc"
+  },
+  {
+    part: "Part 2",
+    date: "2026.03.08",
+    title: "전략: 허브(Hub), 파이프라인(Pipeline), 그리고 거버넌스(Governance)",
+    hookingSentence: "더 이상 AI가 유용한 것을 만들어낼 수 있는지가 아니라, 제품 기획 팀이 그 산출물을 반복 가능하고 통제 가능하게 만들 수 있는지가 핵심입니다.",
+    summary: "AI 결과물의 품질을 안정적으로 유지하고 협업 구조에 안착시키기 위해, 저는 세 가지 레이어(Hub → Pipeline → Governance)로 구조화하여 접근하는 것이 실질적이고 유용함을 발견했습니다.",
+    image: `${import.meta.env.BASE_URL}linkedin-part2.webp`,
+    url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-2-strategy-wonbeen-lee-yczxc"
+  },
+  {
+    part: "Part 3",
+    date: "2026.04.04",
+    title: "프레임워크가 실현되는 곳: 워크플로우 내 유즈케이스",
+    hookingSentence: "AI가 인상적인 단발성 결과물이 아니라, 제품 기획 프로세스의 반복 가능한 워크플로우에 결합되기 시작할 때 진정한 가치가 시작됩니다.",
+    summary: "기획 업무에서 가장 실용적인 AI 활용은 단순 속도 향상이 아니라, 문서 간 연결성 확보, 리서치 지원, 프로토타입 기반 검증, 산출물 리뷰 등 전체 흐름을 일관되게 연결하는 유즈케이스들을 안착시키는 것입니다.",
+    image: `${import.meta.env.BASE_URL}linkedin-part3.webp`,
+    url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-3-where-wonbeen-lee-cdwmc"
+  },
+  {
+    part: "Part 4",
+    date: "2026.05.25",
+    title: "개인의 프롬프트에서 팀의 역량으로",
+    hookingSentence: "반복 가능한 유즈케이스는 중요한 진전이지만, 그것이 곧 조직 전체의 핵심 역량이 됨을 의미하는 것은 아닙니다.",
+    summary: "AI가 기획 팀 내에서 유기적으로 확장되려면, 공유된 스킬, 템플릿, 그리고 검토 가이드라인을 통해 업무 흐름 자체가 자산화되어야 합니다. 진짜 자산은 프롬프트 자체가 아니라, 그것을 둘러싸고 있는 운영 구조입니다.",
+    image: `${import.meta.env.BASE_URL}linkedin-part4.webp`,
+    url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-4-from-wonbeen-lee-fhskc"
+  },
+  {
+    part: "Part 5",
+    date: "2026.06.08",
+    title: "이것이 PM 역할에 가져온 변화",
+    hookingSentence: "AI는 제품 PM의 판단 영역을 없애는 것이 아니라, 오히려 제품 판단력과 의사결정이 개입해야 할 지점을 바꾸어 놓습니다.",
+    summary: "초안 생성이 자동화되면서 PM의 역할은 모든 산출물을 수동으로 작성하는 수준을 넘어, 맥락과 표준을 설계하고, 리뷰 로직과 워크플로우를 정립하여 팀 전체에 양질의 결과물이 원활히 전달되도록 조율하는 방향으로 전환됩니다.",
+    image: `${import.meta.env.BASE_URL}linkedin-part5.webp`,
+    url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-5-what-wonbeen-lee-5rpzc"
+  }
+];
+
+const linkedinArticlesEn = [
   {
     part: "Part 1",
     date: "2026.02.24",
     title: "Why AI adoption forced a process redesign",
+    hookingSentence: "AI didn't simply make planning faster; it made misalignment easier to create at scale.",
     summary: "AI didn't simply make planning faster. It made misalignment easier to create at scale. When drafting becomes cheap, the bottleneck shifts to context, verification, and alignment. So AI adoption isn't a tool decision—it's an operating model redesign.",
-    image: `${import.meta.env.BASE_URL}linkedin-part1.png`,
+    image: `${import.meta.env.BASE_URL}linkedin-part1.webp`,
     url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-1-why-adoption-lee-sx3hc"
   },
   {
     part: "Part 2",
     date: "2026.03.08",
     title: "The strategy: Hub, pipeline, and governance",
+    hookingSentence: "The problem is no longer whether AI can generate something useful, but whether a team can make those outputs repeatable and governable.",
     summary: "The problem is no longer whether AI can generate something useful. The real challenge is whether a product planning team can make those outputs repeatable, connected, and governable. That's why I've found it more useful to think in three layers: Hub → Pipeline → Governance.",
-    image: `${import.meta.env.BASE_URL}linkedin-part2.png`,
+    image: `${import.meta.env.BASE_URL}linkedin-part2.webp`,
     url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-2-strategy-wonbeen-lee-yczxc"
   },
   {
     part: "Part 3",
     date: "2026.04.04",
     title: "Where the framework became real: use cases inside the workflow",
+    hookingSentence: "The shift became real when AI stopped feeling like a set of impressive one-off outputs and started fitting into repeatable workflow use cases.",
     summary: "The shift became real for me when AI stopped feeling like a set of impressive one-off outputs and started fitting into repeatable workflow use cases. In product planning, the most useful use cases were not just faster drafting, but connected documentation, research support, prototype-oriented workflows, and review checks that made the work easier to repeat, review, and hand off.",
-    image: `${import.meta.env.BASE_URL}linkedin-part3.png`,
+    image: `${import.meta.env.BASE_URL}linkedin-part3.webp`,
     url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-3-where-wonbeen-lee-cdwmc"
   },
   {
     part: "Part 4",
     date: "2026.05.25",
     title: "From personal prompts to team capability",
+    hookingSentence: "Repeatable use cases are an important step, but they are still not the same as team capability.",
     summary: "Repeatable use cases are an important step, but they are still not the same as team capability. For AI to scale inside a product planning team, useful workflows need to become reusable through shared skills, templates, standards, and review logic. The real asset is not the prompt alone. It is the operating structure around it.",
-    image: `${import.meta.env.BASE_URL}linkedin-part4.png`,
+    image: `${import.meta.env.BASE_URL}linkedin-part4.webp`,
     url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-4-from-wonbeen-lee-fhskc"
   },
   {
     part: "Part 5",
     date: "2026.06.08",
     title: "What this changed about the PM role",
+    hookingSentence: "AI does not remove the need for product judgment; it changes where that judgment shows up.",
     summary: "AI does not remove the need for product judgment. It changes where that judgment shows up. As AI makes it easier to generate outputs, the product manager's role shifts from producing every artifact manually to designing the context, standards, review logic, and workflow that help good artifacts flow across the team.",
-    image: `${import.meta.env.BASE_URL}linkedin-part5.png`,
+    image: `${import.meta.env.BASE_URL}linkedin-part5.webp`,
     url: "https://www.linkedin.com/pulse/my-journey-bringing-ai-product-planning-part-5-what-wonbeen-lee-5rpzc"
   }
 ];
@@ -577,8 +631,20 @@ interface LinkedInModalProps {
 }
 
 function LinkedInModal({ isOpen, isKo, onClose, onNavigateToArticle }: LinkedInModalProps) {
+  const articles = isKo ? linkedinArticlesKo : linkedinArticlesEn;
   const [activeIndex, setActiveIndex] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -587,22 +653,21 @@ function LinkedInModal({ isOpen, isKo, onClose, onNavigateToArticle }: LinkedInM
       if (e.key === "Escape") {
         onClose();
       } else if (e.key === "ArrowLeft") {
-        setActiveIndex((prev) => (prev > 0 ? prev - 1 : linkedinArticles.length - 1));
+        setActiveIndex((prev) => (prev > 0 ? prev - 1 : articles.length - 1));
       } else if (e.key === "ArrowRight") {
-        setActiveIndex((prev) => (prev < linkedinArticles.length - 1 ? prev + 1 : 0));
+        setActiveIndex((prev) => (prev < articles.length - 1 ? prev + 1 : 0));
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, articles.length]);
 
   if (!isOpen) return null;
 
-  const currentArticle = linkedinArticles[activeIndex];
+  const currentArticle = articles[activeIndex];
   const readLabel = isKo ? "원문 읽기" : "Read Article";
   const closeLabel = isKo ? "닫기" : "Close";
-  const titleText = isKo ? "링크드인 연재 아티클 목록" : "LinkedIn Series Articles";
 
   return (
     <div 
@@ -621,7 +686,7 @@ function LinkedInModal({ isOpen, isKo, onClose, onNavigateToArticle }: LinkedInM
         <div className="modal-header">
           <div className="modal-title-area">
             <span className="case-label">LinkedIn Series</span>
-            <h2 id="linkedin-modal-title">{titleText}</h2>
+            <h2 id="linkedin-modal-title">{currentArticle.title}</h2>
           </div>
           <button
             onClick={onClose}
@@ -645,7 +710,7 @@ function LinkedInModal({ isOpen, isKo, onClose, onNavigateToArticle }: LinkedInM
                     <span className="carousel-part-badge">{currentArticle.part}</span>
                     <span className="carousel-date">{currentArticle.date}</span>
                   </div>
-                  <h3 className="carousel-title">{currentArticle.title}</h3>
+                  <h3 className="carousel-title">{currentArticle.hookingSentence}</h3>
                   <p className="carousel-summary">{currentArticle.summary}</p>
                   
                   <div className="carousel-actions-row">
@@ -665,14 +730,14 @@ function LinkedInModal({ isOpen, isKo, onClose, onNavigateToArticle }: LinkedInM
             <div className="carousel-nav-row">
               <button
                 className="carousel-arrow-btn"
-                onClick={() => setActiveIndex((prev) => (prev > 0 ? prev - 1 : linkedinArticles.length - 1))}
+                onClick={() => setActiveIndex((prev) => (prev > 0 ? prev - 1 : articles.length - 1))}
                 aria-label={isKo ? "이전 슬라이드" : "Previous slide"}
               >
                 &larr;
               </button>
 
               <div className="carousel-dots" role="tablist">
-                {linkedinArticles.map((_, idx) => (
+                {articles.map((_, idx) => (
                   <button
                     key={idx}
                     role="tab"
@@ -686,7 +751,7 @@ function LinkedInModal({ isOpen, isKo, onClose, onNavigateToArticle }: LinkedInM
 
               <button
                 className="carousel-arrow-btn"
-                onClick={() => setActiveIndex((prev) => (prev < linkedinArticles.length - 1 ? prev + 1 : 0))}
+                onClick={() => setActiveIndex((prev) => (prev < articles.length - 1 ? prev + 1 : 0))}
                 aria-label={isKo ? "다음 슬라이드" : "Next slide"}
               >
                 &rarr;

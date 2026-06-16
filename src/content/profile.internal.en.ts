@@ -451,18 +451,18 @@ export const internalEn: SiteCopy = {
       body: "Leveraging structured documentation, analysis depth, and stakeholder alignment to design and lead B2B SaaS product systems.",
       events: [
         {
-          period: "2023 - Present",
+          period: "2025 - Present",
           role: "Global Product Manager",
           company: "emro",
           description: "Leading global product planning for the AI-enabled SRM/S2P SaaS platform Caidentia, driving Jira-based Product Ops and Agentic AI workflow planning.",
-          skills: ["Product Strategy & Roadmap", "Jira/Confluence Operations", "Agentic AI Workflow"]
+          skills: ["Product Strategy & Roadmap", "Jira/Confluence Operations", "Agentic AI Workflow", "Cross-Functional Alignment"]
         },
         {
-          period: "2021 - 2023",
+          period: "2024 - 2025",
           role: "Technical Writer",
           company: "emro",
           description: "Structured complex product requirements and authored specifications, reducing alignment overhead between engineering and business units.",
-          skills: ["Information Architecture", "Requirement Analysis", "Cross-Functional Alignment"]
+          skills: ["Information Architecture", "Requirement Analysis", "i18n Management", "Product Docs."]
         }
       ]
     },

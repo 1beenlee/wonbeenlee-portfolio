@@ -50,8 +50,6 @@ function CaseCard({
         <span className="case-label">{item.label} / {item.category}</span>
         <h3>{item.title}</h3>
         
-        <p className="case-summary-para">{summaryText}</p>
-        
         {highlightsList.length > 0 && (
           <div className="case-highlights-section">
             <strong className="highlights-title">
@@ -125,11 +123,13 @@ function CaseCard({
 export function AiSkillsEcosystemMap({
   locale,
   onSelectSkill,
-  activeSkillName
+  activeSkillName,
+  isColumnLayout
 }: {
   locale: string;
   onSelectSkill?: (skillName: string) => void;
   activeSkillName?: string;
+  isColumnLayout?: boolean;
 }) {
   const isKo = locale === "ko";
   const stages = [
@@ -151,6 +151,41 @@ export function AiSkillsEcosystemMap({
       default: return name;
     }
   };
+
+  if (isColumnLayout) {
+    return (
+      <div className="ecosystem-map-v3 column-layout">
+        {stages.map((stage, idx) => (
+          <Fragment key={stage.tag}>
+            <div className="ecosystem-column-v3">
+              <div className="stage-label-v3 header-node">
+                {stage.tag}
+              </div>
+              <div className="stage-nodes-v3 vertical-stack">
+                {stage.skills.map((skill) => (
+                  <button
+                    key={skill}
+                    className={`ecosystem-node-v3 ${activeSkillName === skill ? "is-active" : ""}`}
+                    onClick={() => onSelectSkill?.(skill)}
+                    title={skill}
+                    type="button"
+                  >
+                    <span className="skill-dot" />
+                    <span className="skill-name-v3">{getAbbr(skill)}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+            {idx < stages.length - 1 && (
+              <div className="ecosystem-column-connector-v3">
+                <span className="column-connector-arrow">&rarr;</span>
+              </div>
+            )}
+          </Fragment>
+        ))}
+      </div>
+    );
+  }
 
   return (
     <div className="ecosystem-map-v3">
