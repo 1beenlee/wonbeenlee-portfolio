@@ -1,3 +1,4 @@
+import { MouseEvent } from "react";
 import { ArrowRight, Mail, ExternalLink } from "lucide-react";
 import { canonicalProfile } from "../content/profile.shared";
 import type { SiteCopy } from "../content/types";
