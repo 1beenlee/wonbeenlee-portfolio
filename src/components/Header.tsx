@@ -26,9 +26,7 @@ export function Header({
     <>
       <header className="site-header">
         <a className="brand" href={homeHref}>
-          <span className="brand-mark" aria-hidden="true">
-            WL
-          </span>
+          <img src="/favicon.svg" alt="WL Logo" className="brand-logo-img" aria-hidden="true" />
           <span>
             <strong>{canonicalProfile.name}</strong>
             <small>{copy.meta.label}</small>
