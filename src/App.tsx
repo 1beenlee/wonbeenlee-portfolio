@@ -189,7 +189,7 @@ function App() {
         <ThinkingSignals copy={copy} />
         <Writing copy={copy} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
         <Confidentiality copy={copy} />
-        <ContactCTA copy={copy} />
+        <ContactCTA copy={copy} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
       </main>
       <Footer copy={copy} />
       {activeCaseId && (
@@ -238,8 +238,10 @@ function App() {
 
 function getHomeHref(audience: Audience, locale: Locale): string {
   if (audience === "public") {
+    if (locale === "ja") return "/public/ja";
     return locale === "ko" ? "/public" : "/public/en";
   }
+  if (locale === "ja") return "/ja";
   return locale === "ko" ? "/" : "/en";
 }
 

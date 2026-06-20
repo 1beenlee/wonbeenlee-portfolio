@@ -1,9 +1,15 @@
-import { Github, Linkedin, Mail, ExternalLink, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, ExternalLink, MapPin, ShieldCheck } from "lucide-react";
 import type { SiteCopy, ContactLink } from "../content/types";
 import { SectionIntro } from "./ValueCards";
 import { canonicalProfile } from "../content/profile.shared";
 
-export function ContactCTA({ copy }: { copy: SiteCopy }) {
+export function ContactCTA({
+  copy,
+  onOutlinkClick
+}: {
+  copy: SiteCopy;
+  onOutlinkClick?: (url: string) => void;
+}) {
   return (
     <section className="content-band closing-band reveal-target" id="contact">
       {/* Background Liquid blobs */}
@@ -20,7 +26,11 @@ export function ContactCTA({ copy }: { copy: SiteCopy }) {
       
       <div className="contact-grid">
         {copy.sections.contact.links.map((link) => (
-          <ContactCard key={link.href} link={link} />
+          <ContactCard 
+            key={`${link.label}-${link.href}`} 
+            link={link} 
+            onOutlinkClick={onOutlinkClick} 
+          />
         ))}
         
         {/* Email card */}
@@ -52,12 +62,33 @@ export function ContactCTA({ copy }: { copy: SiteCopy }) {
   );
 }
 
-function ContactCard({ link }: { link: ContactLink }) {
-  const isGithub = link.label.toLowerCase().includes("github");
-  const Icon = isGithub ? Github : Linkedin;
+function ContactCard({
+  link,
+  onOutlinkClick
+}: {
+  link: ContactLink;
+  onOutlinkClick?: (url: string) => void;
+}) {
+  const labelLower = link.label.toLowerCase();
+  const isGithub = labelLower.includes("github");
+  const isVisa = labelLower.includes("비자") || labelLower.includes("ビザ") || labelLower.includes("visa");
+  const Icon = isGithub ? Github : isVisa ? ShieldCheck : Linkedin;
+
+  const handleCardClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (onOutlinkClick) {
+      e.preventDefault();
+      onOutlinkClick(link.href);
+    }
+  };
 
   return (
-    <a className="contact-card liquid-glass-card" href={link.href} target="_blank" rel="noreferrer">
+    <a 
+      className="contact-card liquid-glass-card" 
+      href={link.href} 
+      target="_blank" 
+      rel="noreferrer"
+      onClick={handleCardClick}
+    >
       <div className="card-glass-glow" />
       <div className="card-fluid-blob" />
       <div className="liquid-accent-layer" aria-hidden="true" />

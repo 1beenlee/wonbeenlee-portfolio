@@ -52,7 +52,7 @@ export function Header({
           
           <a className="icon-button lang-btn" href={languageHref} aria-label={copy.ui.switchLanguageLabel}>
             <Languages size={17} aria-hidden="true" />
-            <span>{copy.hero.secondaryAction}</span>
+            <span>{copy.meta.locale === "ja" ? "Japanese" : copy.meta.locale === "en" ? "English" : "Korean"}</span>
           </a>
 
           {/* Hamburger Menu Trigger */}

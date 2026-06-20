@@ -22,7 +22,7 @@ export const internalEn: SiteCopy = {
       "I work on AI-enabled SRM/S2P SaaS as a Global Product Manager at emro. My work connects product planning, Jira-based execution systems, AI Workplace strategy, market intelligence, and external-facing product assets into repeatable operating systems.",
     primaryAction: "View case studies",
     primaryHref: "#work",
-    secondaryAction: "English"
+    secondaryAction: "Japanese"
   },
   profileCard: {
     eyebrow: "Representative preview",
@@ -279,11 +279,11 @@ export const internalEn: SiteCopy = {
           title: "GTM Demo Enablement and Market Intelligence",
           category: "Market Intelligence in Gartner, Salesforce, SAMSUNG",
           problem:
-            "In global SaaS demos and analyst evaluations (Gartner, Spend Matters, IDC Marketscape, Forrester Research, etc.), AI S2P/P2P value and benchmark outcomes must be explained clearly and concisely. Product narrative, demo data, issue triage, and market benchmarking contexts must align to secure favorable ratings.",
+            "In global SaaS demos and major analyst evaluations (for products recognized in IDC MarketScape 2025 S2P/P2P as a Major Player and The Hackett Group 2025-2026 '50 to Know' list), AI S2P/P2P value and benchmark outcomes must be explained clearly and concisely. Product narrative, demo data, issue triage, and market benchmarking contexts must align to secure favorable ratings.",
           contribution:
-            "Led GTM demo readiness and analyst benchmarking response across scenario structure, demo environment prep, Storylane-style narratives, live issue triage, and coordination with global analyst firms (Gartner, Spend Matters, IDC, Forrester). Public disclosures exclude client names, leads, and private feedback.",
+            "Designed demo scenarios, prepared demo environments and Storylane-style narratives, and supported live issue triage while coordinating the preparation of product analysis and demo materials for global analyst firms (IDC, Forrester, Hackett, etc.). Public disclosures exclude client names, leads, and private feedback.",
           outcome:
-            "Secured favorable evaluations by supporting analyst responses and preparing 3 main and 9 supporting demo scenarios, and built a market intelligence feedback loop aligning product with sales.",
+            "Helped secure favorable benchmark evaluations (such as Major Player and 50 to Know) by preparing product data and 3 main and 9 supporting demo scenarios, and established a market feedback loop.",
           metrics: [
             "3+ MI activities",
             "9+ demo scenarios",
@@ -301,10 +301,10 @@ export const internalEn: SiteCopy = {
             "Representative preview",
             "Evidence-backed"
           ],
-          summary: "Built demo environments and scenarios for major events (Gartner Symposium, Salesforce Agentforce, etc.), and directed benchmarking responses for global research firms (Gartner, Spend Matters, IDC, Forrester) to secure favorable product evaluations.",
+          summary: "Built demo environments and scenarios for major events (Gartner Symposium, etc.) and prepared product data for global research firms (IDC, Forrester, Hackett, etc.) to support favorable evaluations.",
           highlights: [
             "Planned storyline-based GTM demo scenarios aligned with global business narratives",
-            "Coordinated benchmarking and evaluation responses for global analyst firms (Gartner, Spend Matters, IDC, Forrester)",
+            "Prepared planning and functional data to support benchmarking responses for global research firms (IDC, Forrester, Hackett, etc.)",
             "Designed market intelligence feedback loops to align product and sales",
             "Gathered and analyzed 100+ market signals to align product and sales alignment"
           ],

@@ -83,7 +83,7 @@ export function MobileNav({
         <div className="mobile-nav-footer">
           <a className="icon-button mobile-lang-btn" href={languageHref} onClick={onClose}>
             <Languages size={17} aria-hidden="true" />
-            <span>{copy.hero.secondaryAction}</span>
+            <span>{copy.meta.locale === "ja" ? "Japanese" : copy.meta.locale === "en" ? "English" : "Korean"}</span>
           </a>
           <button
             className="icon-button mobile-theme-btn"

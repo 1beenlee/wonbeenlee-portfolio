@@ -1,5 +1,5 @@
 export type Audience = "internal" | "public";
-export type Locale = "ko" | "en";
+export type Locale = "ko" | "en" | "ja";
 
 export type NavItem = {
   label: string;

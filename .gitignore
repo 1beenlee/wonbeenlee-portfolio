@@ -22,3 +22,5 @@ project_sources_original_backup_*.zip
 .idea/
 Thumbs.db
 .DS_Store
+
+.vercel

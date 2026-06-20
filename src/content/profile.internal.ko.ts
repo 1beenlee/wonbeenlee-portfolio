@@ -22,7 +22,7 @@ export const internalKo: SiteCopy = {
       "emro에서 AI 기반 SRM/S2P SaaS인 Caidentia의 글로벌 제품 기획을 맡고 있습니다. 제품 기획, Jira 기반 실행체계, AI Workplace 전략, 시장 인사이트, 대외 커뮤니케이션 자산을 반복 가능한 운영 체계로 연결합니다.",
     primaryAction: "주요 사례 보기",
     primaryHref: "#work",
-    secondaryAction: "Korean"
+    secondaryAction: "English"
   },
   profileCard: {
     eyebrow: "대표 미리보기",
@@ -279,11 +279,11 @@ export const internalKo: SiteCopy = {
           title: "GTM 데모 지원과 시장 인사이트",
           category: "Market Intelligence in Gartner, Salesforce, SAMSUNG",
           problem:
-            "글로벌 SaaS 데모 및 애널리스트 평가(Gartner, Spend Matters, IDC Marketscape, Forrester Research 등)에서는 AI S2P/P2P 가치와 벤치마크 성과를 짧고 명확하게 설명해야 합니다. 제품 내러티브, 데모 데이터, 신속한 이슈 대응, 시장 벤치마킹 맥락이 정렬되어야 우수한 평가를 확보할 수 있습니다.",
+            "글로벌 SaaS 데모 및 주요 애널리스트 평가(IDC MarketScape 2025 S2P/P2P Major Player 및 The Hackett Group 2025-2026 '50 to Know' 선정 제품)에서는 AI S2P/P2P 가치와 벤치마크 성과를 짧고 명확하게 설명해야 합니다. 제품 내러티브, 데모 데이터, 신속한 이슈 대응, 시장 벤치마킹 맥락이 정렬되어야 우수한 평가를 확보할 수 있습니다.",
           contribution:
-            "시나리오 구조, 데모 환경 준비, Storylane형 내러티브, 실시간 이슈 대응, 개발팀 협업, 그리고 Gartner, Spend Matters, IDC Marketscape, Forrester Research 등 주요 글로벌 전문 기관의 애널리스트 벤치마킹 대응을 총괄하여 데모와 시장 분석 지원을 리드했습니다. 공개 범위 준수를 위해 고객 대화, 리드 정보 및 비공개 피드백은 포함하지 않았습니다.",
+            "시나리오 구조 설계, 데모 환경 및 Storylane형 내러티브 준비, 실시간 이슈 대응을 수행하였고, 주요 글로벌 전문 기관(IDC, Forrester, Hackett 등)의 애널리스트 벤치마킹용 제품 분석 자료와 데모 시연 준비를 총괄 및 지원했습니다. 공개 범위 준수를 위해 고객 대화, 리드 정보 및 비공개 피드백은 포함하지 않았습니다.",
           outcome:
-            "주요 데모 시나리오 3개와 보조 시나리오 9개를 구축하고, 애널리스트 평가 대응을 성공적으로 지원하여 우수한 벤치마크 평가를 획득하는 데 기여했으며, 시장 인사이트 피드백 루프를 수립했습니다.",
+            "주요 데모 시나리오 3개와 보조 시나리오 9개를 구축하고, 글로벌 애널리스트 평가에 대응하는 제품 설명 자료를 정비하여 우수한 벤치마크 평가(Major Player 및 50 to Know 등)를 획득하는 데 기여하였으며, 시장 피드백 루프를 수립했습니다.",
           metrics: [
             "시장 정보 수집 활동 3개+",
             "데모 시나리오 9개+",
@@ -301,10 +301,10 @@ export const internalKo: SiteCopy = {
             "재구성 화면",
             "근거 기반"
           ],
-          summary: "글로벌 Gartner 심포지엄, Salesforce Agentforce 등 주요 행사 데모 환경 및 시나리오를 구성하고, 글로벌 리서치 기관(Gartner, Spend Matters, IDC, Forrester) 벤치마크 평가 대응 및 100개 이상의 시장 신호 수집을 총괄하여 우수한 제품 평가를 확보하도록 지원했습니다.",
+          summary: "글로벌 Gartner 심포지엄 등 주요 행사 데모 환경과 시나리오를 구성하고, 글로벌 리서치 기관(IDC, Forrester, Hackett 등) 벤치마크 평가용 설명 데이터를 정비해 제품이 우수한 외부 평가를 확보하도록 지원했습니다.",
           highlights: [
             "글로벌 비즈니스 내러티브에 정렬된 스토리라인 기반 GTM 데모 시나리오 기획",
-            "글로벌 리서치 기관(Gartner, Spend Matters, IDC, Forrester)의 벤치마크 평가 및 분석 대응 총괄",
+            "글로벌 리서치 기관(IDC, Forrester, Hackett 등)의 벤치마크 평가용 기획/기능 데이터 준비 및 대응 지원",
             "100개 이상의 시장 정보 수집 및 분석을 통한 제품/영업 협업 정렬"
           ],
           cardMetrics: [
