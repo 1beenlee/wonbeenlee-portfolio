@@ -10,6 +10,79 @@ interface CaseStudyModalProps {
   initialSkillId?: string | null;
 }
 
+function renderStructuredText(text: string) {
+  if (!text) return null;
+  const paragraphs = text.split("\n\n");
+  return paragraphs.map((para, pIdx) => {
+    const headingMatch = para.match(/^(\[[^\]]+\])\n?([\s\S]*)$/);
+    if (headingMatch) {
+      const heading = headingMatch[1];
+      const body = headingMatch[2];
+      const cleanHeading = heading.slice(1, -1);
+      return (
+        <div
+          key={pIdx}
+          className="structured-para-card animate-fade-in-up"
+          style={{
+            padding: "1.1rem 1.3rem",
+            borderRadius: "10px",
+            background: "rgba(255, 255, 255, 0.015)",
+            border: "1px solid rgba(255, 255, 255, 0.03)",
+            borderLeft: "3px solid var(--accent)",
+            marginBottom: "1.2rem",
+            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",
+            backdropFilter: "blur(8px)",
+            animationDelay: `${pIdx * 0.08}s`,
+            animationFillMode: "both"
+          }}
+        >
+          <h4
+            className="structured-subheading"
+            style={{
+              fontSize: "0.82rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.06em",
+              fontWeight: "700",
+              color: "var(--accent)",
+              margin: "0 0 0.55rem 0"
+            }}
+          >
+            {cleanHeading}
+          </h4>
+          <p
+            style={{
+              margin: 0,
+              whiteSpace: "pre-wrap",
+              fontSize: "0.92rem",
+              lineHeight: "1.68",
+              color: "var(--muted)"
+            }}
+          >
+            {body}
+          </p>
+        </div>
+      );
+    }
+    return (
+      <p
+        key={pIdx}
+        className="animate-fade-in-up"
+        style={{
+          whiteSpace: "pre-wrap",
+          marginBottom: "1rem",
+          fontSize: "0.92rem",
+          lineHeight: "1.68",
+          color: "var(--muted)",
+          animationDelay: `${pIdx * 0.08}s`,
+          animationFillMode: "both"
+        }}
+      >
+        {para}
+      </p>
+    );
+  });
+}
+
 function ProductOpsDetailWorkflow() {
   return (
     <div className="product-ops-detail-workflow">
@@ -295,7 +368,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
           <section className="modal-section">
             <h3>{copy.ui.caseProblemLabel}</h3>
             <div className="modal-text-block">
-              <p>{caseItem.problem}</p>
+              {renderStructuredText(caseItem.problem)}
             </div>
           </section>
 
@@ -303,7 +376,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
           <section className="modal-section">
             <h3>{copy.ui.caseContributionLabel}</h3>
             <div className="modal-text-block">
-              <p>{caseItem.contribution}</p>
+              {renderStructuredText(caseItem.contribution)}
             </div>
             {highlightPoints.length > 0 && (
               <div className="modal-highlights">
@@ -324,7 +397,7 @@ export function CaseStudyModal({ caseId, copy, onClose, initialSkillId }: CaseSt
           <section className="modal-section">
             <h3>{copy.ui.caseOutcomeLabel}</h3>
             <div className="modal-text-block">
-              <p>{caseItem.outcome}</p>
+              {renderStructuredText(caseItem.outcome)}
             </div>
 
             {/* Structured Card Metrics (Factual) */}

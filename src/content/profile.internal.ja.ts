@@ -4,7 +4,7 @@ export const internalJa: SiteCopy = {
   meta: {
     audience: "internal",
     locale: "ja",
-    label: "AI購買PMポートフォリオ",
+    label: "AI Product PM Portfolio",
     alternatePath: "/en"
   },
   nav: [
@@ -17,9 +17,9 @@ export const internalJa: SiteCopy = {
     { label: "コンタクト", href: "#contact" }
   ],
   hero: {
-    title: "購買SaaS、Agentic AI、Product Opsを統合するCaidentia PM",
+    title: "複雑な購買SaaSの課題を解決し、AIレバレッジとProduct Opsで実行体系を構築するプロダクトマネージャー",
     subtitle:
-      "emroにて、AI搭載型S2P SaaS『Caidentia』のグローバル製品企画を担当。Jiraを用いた実行プロセス、AI Workplace戦略、市場インサイトの分析、ドキュメントの資産化などを再現性のある運営システムへと統合しています。",
+      "emroにて、グローバルS2P/SRM SaaS『Caidentia』の製品企画を担当。AIを単なる個人の生産性向上ツールに留めず、チームのボトルネックを解消するワークフローとして設計し、人間の企画判断とガードレイルの下で安定して動作する運営体系（Product Ops）を構築します。",
     primaryAction: "主要プロジェクトを見る",
     primaryHref: "#work",
     secondaryAction: "Korean"
@@ -31,7 +31,7 @@ export const internalJa: SiteCopy = {
     highlights: [
       { label: "役割", value: "Global Product Manager" },
       { label: "ドメイン", value: "SRM/S2P SaaS" },
-      { label: "担当", value: "Agentic AI + Product Ops" },
+      { label: "担当", value: "AI Leverage + Product Ops" },
       { label: "ビザ", value: "配偶者ビザ（就労制限なし・ビザスポンサー不要）" }
     ]
   },
@@ -40,7 +40,7 @@ export const internalJa: SiteCopy = {
       kicker: "Positioning / ミッション",
       title: "複雑な購買業務を、持続可能なシステム体系へと構造化します。",
       body:
-        "私の役割は、製品企画、AI業務設計、Jira-Confluenceの運用プロセス、そして市場分析に基づくコミュニケーションが交差する領域にあります。AIを単なる生産性向上ツールとして捉えるのではなく、購買オブジェクト、権限ガード、規格ドキュメント、リリースサイクルといった業務全体のフローに組み込み、再現性を確保します。",
+        "私の役割は、ビジネスおよび製品設計の非効率を特定し、それらを持続可能で再現性のある運営システムとして標準化することにあります。AIはこれら全てのプロセスを加速させる強力なレバレッジレイヤー（Leverage Layer）であり、常に人間の企画判断と品質ガードレイルの下で安定して動作するよう制御します。",
       pillars: [
         {
           title: "購買ドメインの専門性",
@@ -71,11 +71,11 @@ export const internalJa: SiteCopy = {
           title: "購買業務のためのAgentic AIとAI Workplace",
           category: "Ask Caidentia / AI Workplace",
           problem:
-            "エンタープライズの購買ユーザーは、役割や権限、複数のメニューや書類を行き来しながら業務を行います。AIが購買オブジェクト、アクセスルール、検索結果、次の行動とシームレスに紐づかなければ、単なるチャットボットでは実務のフローに浸透しません。",
+            "[Problem Context]\nエンタープライズの購買ユーザーは、役割や権限、複数のメニューや書類を行き来しながら業務を行います。AIを単なる質疑応答を行う汎用チャットボットとして提供する場合、複雑な購買業務フローや権限管理のルールに合致せず、実務への導入が進まない課題がありました。\n\n[Product Judgment]\nチャットボット中心の設計ではなく、購買ドメインのコア属性（PR、RFx、契約など）と権限レベルを明確に定義し、AIが適切なContext内でのみ動作するよう制限しました。また、AIが最終的な判断を下して実行に移る前に、必ず人間（PMまたはユーザー）が検証するステップを製品方針として定義しました。",
           contribution:
-            "ドキュメント検索、マルチターン対話、メニュー遷移、権限に応じたレスポンス、Chat・Agent Mode・File Insightを束ねるAI Workplaceのロードマップを策定しました。PR-to-RFx自動化、評価意見書の自動作成、内部エージェントツールと連動するフローです。",
+            "[Planning & Execution]\nConfluenceベースの要件定義仕様書とフィーチャーセットを整理し、Jiraを活用してChat、Agent Mode、File Insightを統合するロードマップを構築しました。PR-to-RFxの業務移行時に必要な権限検証ステップやドラフトレビューを、仕様書およびFigmaインタラクションフローとして構造化しました。\n\n[AI Leverage]\nエンタープライズ文書検索（RAG）v2、評価意見書の自動作成、PRデータをRFx詳細要件へと加工するプロセスに専用AIモデルとプロンプトを連携させ、反復的な仕様加工のリードタイムを短縮しました。",
           outcome:
-            "MVP/Beta段階からAI Workplaceへの展開を見据えた、購買特化型AIのUX構造設計に貢献しました。社内画面や開発ロードマップなどの機密詳細は除外しています。",
+            "[Review & Guardrail]\nAIによる権限侵害を防ぐため、ロールベースのアクセス制御（RBAC）をAI検索フィルタリングに統合しました。ユーザーがAIの生成結果を確認・編集した後にのみ、次のビジネスアクションへと進行できるよう、安全な検証モデル（Guardrail）をUXレイヤーに組み込みました。\n\n[Outcome & Impact]\nMVP/Beta段階のAI機能を「購買特化型AI Workplace」へと統合発展させるUX構造とセキュリティ基準を確立し、製品企画および承認プロセスの安全性を向上させました。",
           metrics: [
             "購買オブジェクトを認識するAIフロー",
             "権限ガードを反映したAI対話モデル",
@@ -113,11 +113,11 @@ export const internalJa: SiteCopy = {
           title: "製品企画AXのためのAI Skillエコシステム",
           category: "AI Skills / Product Planning AX",
           problem:
-            "有用なプロンプトやアプローチが個人のノウハウにとどまっていては、組織全体へのAI導入や業務改善の定着は困難です。共有可能な資産、レビュー可能なルール、標準プロセスに昇華させて初めて、チーム全体の能力になります。",
+            "[Problem Context]\n仕様書作成、標準用語翻訳、プロトタイプ検証、リリースノート作成などの作業が細分化・並行して発生し、企画部門のボトルネックとなっていました。また、AIプロンプトが個人の利用に留まっていては、チーム全体の能力や標準品質へと展開できない問題がありました。\n\n[Product Judgment]\n企画業務の完全自動化を目指す無理なアプローチではなく、人間のPMが必ず検証と承認を行う「Quality Gates」を定義しました。また、多言語翻訳やUIレイアウトの不整合を防ぐため、AIの入出力形式を事前ポリシーで制限しました。",
           contribution:
-            "Jira運用、企画ドキュメント作成、用語統一、プロトタイプ生成、成果物レビュー、リリース準備、ユーザーフロー、ポートフォリオ管理などを自動化・サポートするAI Skillエコシステムを構築しました。アイデア受付から企画、検証、リリースまでのパイプラインとしてAIを配置しています。",
+            "[Planning & Execution]\nアイデアの受付（Intake）から要件定義（PRD）、HTMLプロトタイプによる検証、Jiraバックログの移行、リリース準備に至る5段階のプロダクト企画サイクルを定義し、各フローに対応する10種の専用AI Skillを構築しました。\n\n[AI Leverage]\n専用AIツール（planning-doc-writerやuser-flowなど）を用いてPRDドラフトやExcel形式のQAテストケースシード作成を大量自動化し、初期ドキュメントの編集にかかる手作業を劇的に減らしました。",
           outcome:
-            "単発のプロンプト利用を、製品企画AXのための反復可能な開発エコシステムへと転換しました。10以上の専用AI Skillを定義し、15回以上のバージョンアップを重ねて企画・開発フロー全体を高速化しています。",
+            "[Review & Guardrail]\nハルシネーション（AIの嘘）を防止するため、`output-reviewer`により用語整合性を検証し、i18nレビューや操作エリアを明示する`Prototype Navigator (Interaction Hint搭載)`UXレイヤーをHTMLテンプレートに内蔵し、人間が品質を制御できるようにしました。また、ユーザーの修正操作ログを基にAI機能を自律改善する`compound-engineering`モデルを実装しました。\n\n[Outcome & Impact]\n10種のAI Skillを構築し継続的な改善ループを定着させたことで、100件以上の用語レビューを数分以内へと短縮、PRD作成時間を90%以上削減し、チーム全体での仕様の品質と一貫性を担保しました。",
           metrics: [
             "10以上の専用AI Skill",
             "15回以上のバージョンアップデート",
@@ -235,7 +235,7 @@ export const internalJa: SiteCopy = {
           id: "product-ops",
           label: "事例 C",
           title: "Jira-Confluenceを活用したプロダクト企画の運営体系",
-          category: "Market Intelligence in Gartner, Salesforce, SAMSUNG",
+          category: "Product Ops",
           problem:
             "製品ロードマップ、要件定義、進捗管理、意思決定の履歴、リリースプロセスがばらばらに機能していると、大企業向け製品で安定した開発ペースを維持するのは困難です。",
           contribution:

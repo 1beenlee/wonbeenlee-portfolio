@@ -11,7 +11,6 @@ import {
 } from "lucide-react";
 import { canonicalProfile } from "./content/profile.shared";
 import type {
-  Audience,
   Locale,
   SiteCopy,
   Pillar,
@@ -29,13 +28,20 @@ import { ProductOpsSystem } from "./components/ProductOpsSystem";
 import { SkillsGrid } from "./components/SkillsGrid";
 import { CareerTimeline } from "./components/CareerTimeline";
 import { ContactCTA } from "./components/ContactCTA";
+import { getSimplifiedCopy } from "./content/profile.simplified";
+import { SimplifiedPortfolioPage } from "./pages/SimplifiedPortfolioPage";
+import { DetailedPortfolioPage } from "./pages/DetailedPortfolioPage";
 
 function App() {
   const route = resolveRoute(window.location.pathname);
   const copy = route.copy;
-  const languageHref = getLanguageHref(route.audience, route.locale);
-  const homeHref = getHomeHref(route.audience, route.locale);
-  const navHrefs = useMemo(() => copy.nav.map((item) => item.href), [copy.nav]);
+  const simplifiedCopy = getSimplifiedCopy(route.locale);
+  const languageHref = getLanguageHref(route.audience, route.locale, route.pageMode);
+  const homeHref = getPageHref(route.locale, route.pageMode);
+  const detailedHref = getPageHref(route.locale, "detailed");
+  const simplifiedHref = getPageHref(route.locale, "simplified");
+  const navItems = route.pageMode === "simplified" ? simplifiedCopy.nav : copy.nav;
+  const navHrefs = useMemo(() => navItems.map((item) => item.href), [navItems]);
   const activeSection = useActiveSection(navHrefs);
   const { theme, toggleTheme } = useTheme();
 
@@ -175,22 +181,27 @@ function App() {
         languageHref={languageHref}
         homeHref={homeHref}
         activeSection={activeSection}
+        navItems={navItems}
         theme={theme}
         onToggleTheme={toggleTheme}
       />
-      <main>
-        <Hero copy={copy} onCaidentiaClick={(url) => setConfirmOutlinkUrl(url)} />
-        <ValueCards copy={copy} />
-        <CaseStudyCards copy={copy} onOpenCase={openCase} />
-        <ProductOpsSystem copy={copy} />
-        <EvidenceMetrics copy={copy} onLinkedInClick={() => setIsLinkedInModalOpen(true)} />
-        <SkillsGrid copy={copy} />
-        <CareerTimeline copy={copy} />
-        <ThinkingSignals copy={copy} />
-        <Writing copy={copy} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
-        <Confidentiality copy={copy} />
-        <ContactCTA copy={copy} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
-      </main>
+      <main>{route.pageMode === "simplified" ? (
+        <SimplifiedPortfolioPage copy={simplifiedCopy} siteCopy={copy} detailedHref={detailedHref} onOpenCase={openCase} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
+      ) : (
+        <DetailedPortfolioPage copy={simplifiedCopy} simplifiedHref={simplifiedHref}>
+          <Hero copy={copy} onCaidentiaClick={(url) => setConfirmOutlinkUrl(url)} />
+          <ValueCards copy={copy} />
+          <CaseStudyCards copy={copy} onOpenCase={openCase} />
+          <ProductOpsSystem copy={copy} />
+          <EvidenceMetrics copy={copy} onLinkedInClick={() => setIsLinkedInModalOpen(true)} />
+          <SkillsGrid copy={copy} />
+          <CareerTimeline copy={copy} />
+          <ThinkingSignals copy={copy} />
+          <Writing copy={copy} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
+          <Confidentiality copy={copy} />
+          <ContactCTA copy={copy} onOutlinkClick={(url) => setConfirmOutlinkUrl(url)} />
+        </DetailedPortfolioPage>
+      )}</main>
       <Footer copy={copy} />
       {activeCaseId && (
         <CaseStudyModal
@@ -236,13 +247,10 @@ function App() {
   );
 }
 
-function getHomeHref(audience: Audience, locale: Locale): string {
-  if (audience === "public") {
-    if (locale === "ja") return "/public/ja";
-    return locale === "ko" ? "/public" : "/public/en";
-  }
-  if (locale === "ja") return "/ja";
-  return locale === "ko" ? "/" : "/en";
+function getPageHref(locale: Locale, pageMode: "simplified" | "detailed"): string {
+  const prefix = pageMode === "detailed" ? "/detailed" : "";
+  if (locale === "ko") return prefix || "/";
+  return `${prefix}/${locale}`;
 }
 
 function EvidenceMetrics({ copy, onLinkedInClick }: { copy: SiteCopy; onLinkedInClick?: () => void }) {
@@ -473,8 +481,22 @@ function useActiveSection(hrefs: string[]) {
       return;
     }
 
+    const lastSectionId = sectionIds[sectionIds.length - 1];
+    const isAtPageBottom = () =>
+      window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+    const activateLastSectionAtBottom = () => {
+      if (lastSectionId && isAtPageBottom()) {
+        setActiveSection(lastSectionId);
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
+        if (lastSectionId && isAtPageBottom()) {
+          setActiveSection(lastSectionId);
+          return;
+        }
+
         const visibleEntry = entries
           .filter((entry) => entry.isIntersecting)
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -484,14 +506,19 @@ function useActiveSection(hrefs: string[]) {
         }
       },
       {
-        rootMargin: "-18% 0px -68% 0px",
+        rootMargin: "-18% 0px -52% 0px",
         threshold: [0.08, 0.18, 0.32]
       }
     );
 
     sections.forEach((section) => observer.observe(section));
+    window.addEventListener("scroll", activateLastSectionAtBottom, { passive: true });
+    activateLastSectionAtBottom();
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", activateLastSectionAtBottom);
+    };
   }, [sectionIds]);
 
   return activeSection;

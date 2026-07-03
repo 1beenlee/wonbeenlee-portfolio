@@ -36,7 +36,6 @@ function CaseCard({
   onOpenCase: (id: string, skillId?: string) => void;
 }) {
   // Safe extraction of optional summary, highlights, and cardMetrics with fallbacks
-  const summaryText = item.summary || item.problem.substring(0, 120) + "...";
   const highlightsList = item.highlights || [];
   const cardMetricsList = item.cardMetrics || [];
   const openLabel = copy.meta.locale === "ko" ? "상세 보기" : "View Details";

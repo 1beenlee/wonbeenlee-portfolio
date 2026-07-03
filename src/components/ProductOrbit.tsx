@@ -46,7 +46,7 @@ export function ProductOrbit() {
           <div className="core-inner">
             <div className="liquid-accent-layer" aria-hidden="true" />
             <strong>AI</strong>
-            <span>Product OS</span>
+            <span>Planning OS</span>
           </div>
         </div>
 
@@ -106,11 +106,11 @@ export function ProductOrbit() {
             <div className="sat-card-glow" />
             <div className="liquid-accent-layer" aria-hidden="true" />
             <div className="sat-card-content">
-              <strong>Intelligence Layer</strong>
+              <strong>Planning AX</strong>
               <ul>
-                <li>Predictive Analytics</li>
-                <li>GenAI & Insights</li>
-                <li>Automation Agent</li>
+                <li>AI Skill Ecosystem</li>
+                <li>Workflow Automation</li>
+                <li>Review & Handoff</li>
               </ul>
             </div>
           </div>

@@ -4,7 +4,7 @@ export const internalEn: SiteCopy = {
   meta: {
     audience: "internal",
     locale: "en",
-    label: "AI Procurement PM Portfolio",
+    label: "AI Product PM Portfolio",
     alternatePath: "/"
   },
   nav: [
@@ -17,9 +17,9 @@ export const internalEn: SiteCopy = {
     { label: "Contact", href: "#contact" }
   ],
   hero: {
-    title: "Caidentia PM connecting procurement SaaS, Agentic AI, and Product Ops.",
+    title: "Product Manager solving complex SaaS problems through AI leverage and Product Ops systems.",
     subtitle:
-      "I work on AI-enabled SRM/S2P SaaS as a Global Product Manager at emro. My work connects product planning, Jira-based execution systems, AI Workplace strategy, market intelligence, and external-facing product assets into repeatable operating systems.",
+      "I lead product planning for Caidentia, a global SRM/S2P SaaS at emro. I frame AI beyond isolated productivity prompts—automating team workflow bottlenecks, designing stable process guardrails, and structuring repeatable Product Ops.",
     primaryAction: "View case studies",
     primaryHref: "#work",
     secondaryAction: "Japanese"
@@ -31,7 +31,7 @@ export const internalEn: SiteCopy = {
     highlights: [
       { label: "Role", value: "Global Product Manager" },
       { label: "Domain", value: "SRM/S2P SaaS" },
-      { label: "Focus", value: "Agentic AI + Product Ops" }
+      { label: "Focus", value: "AI Leverage + Product Ops" }
     ]
   },
   sections: {
@@ -39,7 +39,7 @@ export const internalEn: SiteCopy = {
       kicker: "Positioning / What I do",
       title: "I turn procurement complexity into operable product systems.",
       body:
-        "My work sits where Caidentia product planning, AI workflow design, Jira-Confluence operating routines, and market-facing communication meet. I frame AI around procurement objects, permissions, planning artifacts, release routines, and reviewable workflows rather than isolated productivity prompts.",
+        "My role focuses on identifying execution bottlenecks in product design and establishing repeatable standards to scale them. I treat AI as a powerful leverage layer, controlled under strict human product judgment and quality guardrails.",
       pillars: [
         {
           title: "Procurement domain depth",
@@ -47,14 +47,14 @@ export const internalEn: SiteCopy = {
             "Plan around real SRM/S2P objects such as PRs, RFx, contracts, POs, ASN, GR, invoices, items, suppliers, spend context, and role-based access."
         },
         {
-          title: "Agentic AI as workflow",
+          title: "AI Leverage & Guardrail",
           body:
-            "Shape AI Workplace directions that connect search, chat, agent mode, file insight, permissions, result review, and safe next actions."
+            "Design an AI Workplace connecting search, agents, and document insights with robust quality gates to mitigate hallucinations and security risks."
         },
         {
-          title: "Product Ops execution",
+          title: "Product Ops & Workflow",
           body:
-            "Structure issue hierarchy, reusable templates, release communication, decision records, and handoff routines through Jira and Confluence."
+            "Unify Jira and Confluence to automate specifications from intake to release, building operating routines that scale across the team."
         }
       ]
     },
@@ -70,11 +70,11 @@ export const internalEn: SiteCopy = {
           title: "Agentic AI and AI Workplace for Procurement",
           category: "Ask Caidentia / AI Workplace",
           problem:
-            "Enterprise procurement users move across many menus, documents, roles, and permissions. A generic chatbot is not enough unless AI connects to procurement objects, access rules, search results, and next actions.",
+            "[Problem Context]\nEnterprise procurement users navigate multiple screens, docs, and strict roles. Providing a generic Q&A chatbot failed to align with complex procurement workflows and access control rules, hindering actual adoption.\n\n[Product Judgment]\nInstead of a generic chatbot, I defined core procurement domain objects (PRs, RFx, contracts) and permission boundaries to scope the AI’s actions. I also established a core product policy: AI must never execute critical actions without human review and confirmation.",
           contribution:
-            "Planned Agentic AI workflows across read-only document search, multi-turn Q&A, menu navigation, see-more behavior, permission-aware responses, and the AI Workplace direction combining Chat, Agent Mode, and File Insight. Related work also connects to PR-to-RFx automation, evaluation opinion drafting, document finder v2, and internal agent tooling.",
+            "[Planning & Execution]\nDefined Confluence-based specifications and feature sets, mapping out a roadmap in Jira to integrate Chat, Agent Mode, and File Insight. Structured permission verification checkpoints and draft reviews into the specification and Figma flows.\n\n[AI Leverage]\nOrchestrated specialized AI pipelines for enterprise search (RAG) v2, evaluation drafting, and PR-to-RFx data conversion to drastically cut down repetitive spec-processing time.",
           outcome:
-            "Helped shape a procurement-specific AI UX structure from MVP/Beta capabilities toward an AI Workplace direction while keeping internal screens, implementation details, and sensitive roadmap material out of public view.",
+            "[Review & Guardrail]\nIntegrated Role-Based Access Control (RBAC) into AI search queries to prevent permission leaks. Added explicit user-in-the-loop validation screens before letting AI trigger subsequent business actions.\n\n[Outcome & Impact]\nEstablished a secure AI UX framework that evolved MVP chatbot capabilities into a consolidated procurement-specialized AI Workplace, safeguarding data and workflow compliance.",
           metrics: [
             "Procurement object-aware AI workflow",
             "Permission-aware AI interaction model",
@@ -94,7 +94,7 @@ export const internalEn: SiteCopy = {
             "No customer data",
             "Evidence-backed"
           ],
-          summary: "Planned the AI Workplace direction combining Chat, Agent Mode, and File Insight to automate procurement workflows from request to approval.",
+          summary: "Evolved simple prompting into repeatable standards, combining AI speed with human-in-the-loop quality gates to reduce PRD writing time by 90% and secure procurement workflow compliance.",
           highlights: [
             "Planned AI interaction model based on procurement objects and permissions",
             "Designed agent workflows including document search v2 and PR-to-RFx automation",
@@ -112,11 +112,11 @@ export const internalEn: SiteCopy = {
           title: "AI Skill Ecosystem for Product Planning AX",
           category: "AI Skills / Product Planning AX",
           problem:
-            "AI adoption stalls when useful prompts remain personal habits instead of reviewed workflows, standards, and reusable operating assets.",
+            "[Problem Context]\nWriting specifications, translating UI glossary terms, validating prototypes, and formatting release notes created significant planning bottlenecks. If AI prompts remain personal habits, they cannot scale to team-wide capabilities.\n\n[Product Judgment]\nInstead of attempting full automation of PM tasks, I defined strict 'Quality Gates' requiring human PM sign-off. I established policies to regulate AI input/output schemas to prevent multilingual inconsistencies and UI breaks.",
           contribution:
-            "Built an AI Skill ecosystem for product planning work across Jira operations, planning documents, terminology, prototype generation, output review, release support, user flows, and product portfolio assets. The system frames AI as a pipeline from idea intake to planning, visualization, review, and release communication.",
+            "[Planning & Execution]\nStructured a 5-stage product planning lifecycle—from Intake to PRD writing, HTML prototyping, Jira syncing, and Release preparation—designing 10 specialized AI Skills for each step.\n\n[AI Leverage]\nUsed custom AI tools (such as planning-doc-writer and user-flow) to automate PRD drafts and Excel QA test-case seeds, drastically reducing raw copywriting and formatting overhead.",
           outcome:
-            "Turned prompt usage into a repeatable workflow ecosystem for product planning AX, with 10+ AI Skills and 15+ version updates across planning, review, Jira, release, and prototype workflows.",
+            "[Review & Guardrail]\nBuilt `output-reviewer` to audit terminology, and introduced a `Prototype Navigator (with Interaction Hints)` to let humans verify responsive HTML layouts and translations. Implemented a `compound-engineering` feedback model to continuously auto-improve AI versions based on user corrections.\n\n[Outcome & Impact]\nEstablished a repeatable workflow ecosystem with 10 AI skills and 15+ version upgrades, reducing bulk glossary reviews from half a day to minutes and PRD creation from days to under an hour.",
           metrics: [
             "10+ AI Skills",
             "15+ Skill version updates",
@@ -236,11 +236,11 @@ export const internalEn: SiteCopy = {
           title: "Jira-Confluence Product Planning Operating System",
           category: "Product Ops",
           problem:
-            "Product planning becomes fragile when goals, issue hierarchy, requirements, release notes, status tracking, and decision records live in disconnected routines.",
+            "[Problem Context]\nDisconnects between roadmaps, requirement specs, release notes, and decision logs created alignment overhead and obscured planning progress across engineering and business teams.\n\n[Product Judgment]\nInstead of simple task board tracking, I designed a policy to map Jira Epics and Feature Sets 1:1 to key product metrics, enforcing strict 'Definition of Ready' gates before handing specifications to dev teams.",
           contribution:
-            "Structured Jira and Confluence-based operating routines across planning hierarchy, templates, state tracking, release communication, reusable documentation, and issue handoff. The same system also supports feature planning work such as PO Change, Widget Based Home, Contract+AI, Item 360, and release preparation without exposing private issue metadata.",
+            "[Planning & Execution]\nStructured 320+ Jira Epics under a unified hierarchy, using Confluence as the Single Source of Truth to log decision trails and auto-draft release narration scripts.\n\n[AI Leverage]\nIntegrated Atlassian DC APIs with AI Skills (`caid-jira`, `linear-pm`) to automate batch ticket creation and status transitions directly from Confluence PRD contexts.",
           outcome:
-            "Structured 320+ Jira epics and improved one tested planning workflow from 60 minutes to 5 minutes in colleague testing, a 12x efficiency gain for that specific workflow.",
+            "[Review & Guardrail]\nEnforced a boundary between private metadata and public release snippets to ensure security, and designed a manual validation step for PMs to sign off before release notes are published.\n\n[Outcome & Impact]\nStandardized the product planning operating system, improving one tested planning transition workflow by 12x (reducing time from 60 to 5 minutes) in colleague testing.",
           metrics: [
             "320+ Jira epics structured",
             "12x efficiency gain for one tested workflow",
@@ -261,7 +261,7 @@ export const internalEn: SiteCopy = {
             "Evidence-backed",
             "One tested workflow"
           ],
-          summary: "Structured Jira and Confluence-based operating routines across planning hierarchy, templates, state tracking, release communication, and issue handoff.",
+          summary: "Unified requirements, status tracking, and release logs into a Single Source of Truth on Jira-Confluence, streamlining agile handoff and removing workflow silos.",
           highlights: [
             "Structured agile planning, templates, and release routines into a unified system",
             "Supported feature planning work such as PO Change, Widget Based Home, Contract+AI, and Item 360",
@@ -279,11 +279,11 @@ export const internalEn: SiteCopy = {
           title: "GTM Demo Enablement and Market Intelligence",
           category: "Market Intelligence in Gartner, Salesforce, SAMSUNG",
           problem:
-            "In global SaaS demos and major analyst evaluations (for products recognized in IDC MarketScape 2025 S2P/P2P as a Major Player and The Hackett Group 2025-2026 '50 to Know' list), AI S2P/P2P value and benchmark outcomes must be explained clearly and concisely. Product narrative, demo data, issue triage, and market benchmarking contexts must align to secure favorable ratings.",
+            "[Problem Context]\nSecuring top-tier analyst reviews (such as IDC MarketScape Major Player 2025 and Hackett Group '50 to Know') required demonstrating the value and benchmark performance of S2P/P2P AI features under tight constraints.\n\n[Product Judgment]\nInstead of presenting complex, exhaustive feature sets, I scoped the GTM demo around 3 primary business-aligned stories and 9 supporting scenarios tailored directly to analyst and buyer decision contexts.",
           contribution:
-            "Designed demo scenarios, prepared demo environments and Storylane-style narratives, and supported live issue triage while coordinating the preparation of product analysis and demo materials for global analyst firms (IDC, Forrester, Hackett, etc.). Public disclosures exclude client names, leads, and private feedback.",
+            "[Planning & Execution]\nConstructed interactive demo environments using Storylane and compiled analyst-ready documentation to streamline benchmarking responses and live evaluations.\n\n[AI Leverage]\nLeveraged the `release-prep` AI Skill to analyze Jira specs and PRDs, auto-generating analyst-aligned responses and multi-lingual release notes to accelerate GTM readiness.",
           outcome:
-            "Helped secure favorable benchmark evaluations (such as Major Player and 50 to Know) by preparing product data and 3 main and 9 supporting demo scenarios, and established a market feedback loop.",
+            "[Review & Guardrail]\nMaintained security protocols by auditing mock demo data to prevent leakage of client feedback, pricing, or internal product roadmaps.\n\n[Outcome & Impact]\nContributed to securing Major Player and '50 to Know' recognitions, and established a feedback loop capturing over 100+ market signals to refine the core product roadmap.",
           metrics: [
             "3+ MI activities",
             "9+ demo scenarios",

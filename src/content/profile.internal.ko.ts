@@ -4,7 +4,7 @@ export const internalKo: SiteCopy = {
   meta: {
     audience: "internal",
     locale: "ko",
-    label: "AI 구매 PM 포트폴리오",
+    label: "AI Product PM Portfolio",
     alternatePath: "/en"
   },
   nav: [
@@ -17,9 +17,9 @@ export const internalKo: SiteCopy = {
     { label: "연락", href: "#contact" }
   ],
   hero: {
-    title: "구매 SaaS, Agentic AI, Product Ops를 연결하는 Caidentia PM",
+    title: "복잡한 구매 SaaS 문제를 해결하고, AI 레버리지와 Product Ops로 실행력을 극대화하는 Product Manager",
     subtitle:
-      "emro에서 AI 기반 SRM/S2P SaaS인 Caidentia의 글로벌 제품 기획을 맡고 있습니다. 제품 기획, Jira 기반 실행체계, AI Workplace 전략, 시장 인사이트, 대외 커뮤니케이션 자산을 반복 가능한 운영 체계로 연결합니다.",
+      "emro에서 글로벌 SRM/S2P SaaS인 Caidentia의 제품 기획을 담당하고 있습니다. AI를 단순한 개별 생산성 도구에 그치지 않고, 팀의 실행 병목을 자동화하고 안정적인 프로세스 가드레일을 설계하며 반복 가능한 운영 체계(Product Ops)로 정립합니다.",
     primaryAction: "주요 사례 보기",
     primaryHref: "#work",
     secondaryAction: "English"
@@ -31,7 +31,7 @@ export const internalKo: SiteCopy = {
     highlights: [
       { label: "직무", value: "Global Product Manager" },
       { label: "도메인", value: "SRM/S2P SaaS" },
-      { label: "담당", value: "Agentic AI + Product Ops" }
+      { label: "담당", value: "AI Leverage + Product Ops" }
     ]
   },
   sections: {
@@ -39,7 +39,7 @@ export const internalKo: SiteCopy = {
       kicker: "Positioning / 하는 일",
       title: "복잡한 구매 업무를 운영 가능한 제품 체계로 정리합니다.",
       body:
-        "제 일은 Caidentia 제품 기획, AI 업무 설계, Jira-Confluence 운영 루틴, 시장 대응 커뮤니케이션이 만나는 지점에 있습니다. AI를 단발성 생산성 도구로 보지 않고, 구매 객체, 권한, 기획 산출물, 릴리스 루틴, 검토 가능한 흐름 위에 올립니다.",
+        "제 역할은 비즈니스 및 제품 설계의 비효율을 식별하고, 이를 지속 가능하고 반복 가능한 운영 체계로 표준화하는 데 있습니다. AI는 이 모든 프로세스를 가속하는 강력한 레버리지 레이어(Leverage Layer)이며, 언제나 인간의 기획적 판단과 품질 가드레일 아래에서 안정적으로 동작하도록 제어합니다.",
       pillars: [
         {
           title: "구매 도메인 깊이",
@@ -47,14 +47,14 @@ export const internalKo: SiteCopy = {
             "PR, RFx, 계약, PO, ASN, 입고, 인보이스, 품목, 공급사, 지출 맥락, 역할 기반 접근권한 위에서 SRM/S2P 제품을 기획합니다."
         },
         {
-          title: "흐름으로 보는 Agentic AI",
+          title: "AI Leverage & Guardrail",
           body:
-            "검색, 채팅, 에이전트 모드, 파일 인사이트, 권한, 결과 검토, 안전한 다음 행동을 연결하는 AI Workplace 방향성을 설계합니다."
+            "검색, 에이전트, 파일 분석을 연결하는 AI Workplace를 설계하며, AI의 환각과 권한 침해를 방어하는 품질 검증 가드레일을 함께 구축합니다."
         },
         {
-          title: "Product Ops 실행 체계",
+          title: "Product Ops & 업무 흐름",
           body:
-            "Jira와 Confluence를 기반으로 이슈 계층, 재사용 템플릿, 릴리스 커뮤니케이션, 의사결정 기록, 인계 루틴을 구조화합니다."
+            "Jira와 Confluence를 통합하여 요구사항의 접수부터 릴리즈까지의 파이프라인을 자동화하고, 팀이 반복하여 재사용 가능한 운영 루틴을 수립합니다."
         }
       ]
     },
@@ -70,11 +70,11 @@ export const internalKo: SiteCopy = {
           title: "구매 업무를 위한 Agentic AI와 AI Workplace",
           category: "Ask Caidentia / AI Workplace",
           problem:
-            "엔터프라이즈 구매 사용자는 여러 메뉴, 문서, 역할, 권한을 오가며 일합니다. AI가 구매 객체, 접근 규칙, 검색 결과, 다음 행동과 연결되지 않으면 일반 챗봇만으로는 실제 업무 흐름에 들어가기 어렵습니다.",
+            "[Problem Context]\n엔터프라이즈 구매 사용자는 다수의 메뉴, 문서, 시스템 역할과 복잡한 접근 권한을 오가며 업무를 처리합니다. AI를 단순히 질문에 답변하는 범용 챗봇 형태로 제공할 경우, 복잡한 구매 업무 흐름과 권한 가이드라인에 맞지 않아 실무 도입에 한계가 존재했습니다.\n\n[Product Judgment]\n챗봇 중심의 접근 대신, 구매 도메인의 핵심 속성(PR, RFx, 계약 등) 및 권한 계층을 명확히 정의하여 AI가 올바른 Context 내에서만 행동하도록 제한했습니다. 또한, AI가 최종 판단을 내려 행동하기 전에 반드시 인간 PM/사용자가 검증할 수 있는 단계를 제품 정책으로 수립했습니다.",
           contribution:
-            "읽기 전용 문서 검색, 연속 질의응답, 메뉴 이동, 더보기 동작, 권한 기반 응답, Chat, Agent Mode, File Insight를 묶는 AI Workplace 방향을 기획했습니다. PR-to-RFx 자동화, 평가 의견 초안, 문서 검색 v2, 내부 에이전트 도구와도 연결되는 흐름입니다.",
+            "[Planning & Execution]\nConfluence 기반의 요구사항 스펙 및 피쳐 셋을 정의하고, Jira를 활용해 Chat, Agent Mode, File Insight를 통합하는 제품 로드맵을 구축했습니다. PR-to-RFx 업무 전환 시 필요한 권한 확인 절차와 중간 기획 검토 단계를 기획서 및 Figma 상호작용 흐름으로 구조화했습니다.\n\n[AI Leverage]\n엔터프라이즈 문서 검색(RAG) v2, 평가 의견 자동 초안 생성, PR 데이터를 RFx 상세 요건으로 가공하는 과정에 맞춤형 AI 모델과 프롬프트를 접목하여 반복적인 스펙 가공 리드타임을 가속했습니다.",
           outcome:
-            "MVP/Beta 기능에서 AI Workplace 방향으로 이어지는 구매 특화 AI UX 구조를 잡는 데 기여했습니다. 내부 화면, 구현 세부정보, 민감한 로드맵은 공개 범위에서 제외했습니다.",
+            "[Review & Guardrail]\nAI의 권한 침해를 방어하기 위해 역할 기반 접근 권한(RBAC)을 AI 검색 필터링에 통합했습니다. 사용자가 AI의 생성 결과를 확인한 후에만 다음 비즈니스 행동으로 진입할 수 있도록 안전 검토 장치(Guardrail)를 UX 레이어로 정비했습니다.\n\n[Outcome & Impact]\nMVP/Beta 단계의 AI 기능을 단일 업무가 아닌 '구매 특화 AI Workplace'로 통합 발전시키는 UX 구조와 보안 가이드를 정립하여, 기획 및 승인 루프의 안전성을 향상시켰습니다.",
           metrics: [
             "구매 객체를 이해하는 AI 흐름",
             "권한을 반영하는 AI 상호작용 모델",
@@ -94,7 +94,7 @@ export const internalKo: SiteCopy = {
             "고객 데이터 없음",
             "근거 기반"
           ],
-          summary: "Agentic AI와 워크플로우를 자동화하여 구매 요청부터 승인, 기록까지 전 과정을 연결하는 AI Workplace 방향을 기획했습니다.",
+          summary: "기획-개발-QA 파이프라인의 비효율을 제거하기 위해 10종의 맞춤형 AI 스킬을 활용한 기획 업무 프로세스(AX)를 구축했습니다. AI의 생성 속도에 인간 PM의 엄격한 검토 기준(Quality Gate)을 결합하여, 기획 산출물의 품질을 높이면서 전체 리드타임을 90% 이상 단축했습니다.",
           highlights: [
             "구매 객체 및 접근 권한 기반 AI 상호작용 모델 기획",
             "문서 검색 v2, PR-to-RFx 자동화 등 에이전트 워크플로우 설계",
@@ -112,13 +112,13 @@ export const internalKo: SiteCopy = {
           title: "제품 기획 AX를 위한 AI Skill 생태계",
           category: "AI Skills / Product Planning AX",
           problem:
-            "유용한 프롬프트가 개인 습관에 머무르면 AI 도입은 확장되기 어렵습니다. 검토 가능한 흐름, 표준, 재사용 가능한 운영 자산으로 바뀌어야 팀 역량이 됩니다.",
+            "[Problem Context]\n기획 스펙 생성, 용어 번역, 프로토타입 검증, 릴리즈 노트 가공 등의 작업이 파편화되어 기획 부서의 병목이 생겼으며, AI 프롬프트를 단순히 개인의 생산성 향상에 머무르면 팀 전체의 역량과 표준 품질로 전환되기 어려웠습니다.\n\n[Product Judgment]\n기획 업무 전반을 AI로 완전 자동화하는 무리한 시도 대신, '인간 PM의 최종 검토 및 승인(Human-in-the-loop)'을 무조건 거치는 엄격한 품질 기준(Quality Gates)을 정의했습니다. 또한, 다국어 및 UI 규격에 충돌이 없도록 AI의 입력 및 출력 사양을 사전 정책으로 규제했습니다.",
           contribution:
-            "Jira 운영, 기획 문서, 용어 관리, 프로토타입 생성, 산출물 리뷰, 릴리스 지원, 사용자 흐름, 제품 포트폴리오 자산을 다루는 AI Skill 생태계를 구축했습니다. 아이디어 접수에서 기획, 시각화, 검토, 릴리스 커뮤니케이션으로 이어지는 파이프라인으로 AI를 정리했습니다.",
+            "[Planning & Execution]\n요구사항 발견(Intake)에서부터 요구사항 정의(PRD), HTML 프로토타입 검증, Jira 백로그 이관, 릴리즈 통보로 이어지는 5단계 제품 기획 라이프사이클을 정의하고, 각 흐름에 적합한 10종의 전용 AI 도구 파이프라인을 설계했습니다.\n\n[AI Leverage]\n맞춤형 AI 스킬(planning-doc-writer, user-flow 등)들을 활용하여 PRD 마크다운 작성 및 Excel QA 시나리오 생성을 대량 자동화하여 기획의 초안 가공 공수를 극적으로 감축했습니다.",
           outcome:
-            "프롬프트 사용을 제품 기획 AX를 위한 반복 가능한 업무 생태계로 전환했습니다. 9개 이상의 AI Skill과 15회 이상의 버전 업데이트가 기획, 리뷰, Jira, 릴리스, 프로토타입 흐름 전반에 쌓였습니다.",
+            "[Review & Guardrail]\nAI 환각(Hallucination) 방지를 위해 `output-reviewer`로 용어 정합성을 사후 검증하고, i18n 리뷰 및 조작 영역을 시각화하는 `Prototype Navigator (Interaction Hint 탑재)` UX 레이어를 HTML 템플릿에 내장해 사람이 품질을 정밀 통제하게 했습니다. 또한, 교정 로그를 수집하여 AI 성능을 자율 개선하는 `compound-engineering` 모델을 구축했습니다.\n\n[Outcome & Impact]\n10종의 AI 스킬 생태계 구축 및 지속적 피드백 루틴 정립을 통해 100개 항목 표준용어 검토 시간 수 분 이내 단축 및 PRD 작성 시간 90% 이상을 절감하여 기획의 일관성을 확보했습니다.",
           metrics: [
-            "9개 이상 AI Skill",
+            "10개 이상 AI Skill",
             "15회 이상 Skill 버전 업데이트",
             "아이디어에서 릴리스까지 이어지는 기획 파이프라인"
           ],
@@ -236,11 +236,11 @@ export const internalKo: SiteCopy = {
           title: "Jira-Confluence 제품 기획 운영 체계",
           category: "Product Ops",
           problem:
-            "목표, 이슈 계층, 요구사항, 릴리스 노트, 상태 추적, 의사결정 기록이 분리되면 제품 기획은 쉽게 불안정해집니다.",
+            "[Problem Context]\n엔터프라이즈 제품 기획 과정에서 로드맵, 상세 스펙 요구사항, 릴리즈 커뮤니케이션, 변경 이력 및 의사결정 기록이 분절되어 협업 부서 간 정렬이 어렵고 진척 상황의 투명성이 저하되는 병목이 있었습니다.\n\n[Product Judgment]\n단순한 이슈 트래킹에 그치지 않고, Jira의 에픽(Epic)과 제품 기능 묶음(Feature Set)을 비즈니스 목표 지표와 1:1로 결합하는 구조적 정책을 수립했습니다. 또한 기획 완료(Definition of Ready)의 엄격한 통제 필터를 두었습니다.",
           contribution:
-            "기획 계층, 템플릿, 상태 추적, 릴리스 커뮤니케이션, 재사용 문서, 이슈 인계를 Jira-Confluence 기반 운영 루틴으로 구조화했습니다. 같은 체계 안에서 PO Change, Widget Based Home, Contract+AI, Item 360, 릴리스 준비 같은 세부 기획도 다루되, 비공개 이슈 메타데이터는 노출하지 않습니다.",
+            "[Planning & Execution]\n320개 이상의 Jira Epic을 일관된 계층으로 매핑하고, Confluence를 단일 진실 공급원(Single Source of Truth)으로 삼아 릴리즈 스니펫 작성 및 의사결정 이력을 구조화하여 제품 발견부터 출시까지의 루트를 관리했습니다.\n\n[AI Leverage]\nAtlassian DC API와 AI 스킬(`caid-jira`, `linear-pm`)을 접목해 반복적인 기획 이슈 batch 생성 및 status transition 처리를 기획 프로세스에 내장하여 시스템 관리 오버헤드를 낮추었습니다.",
           outcome:
-            "320개 이상의 Jira epic을 구조화했고, 동료 테스트 기준 특정 기획 흐름을 60분에서 5분으로 줄여 해당 흐름에서 12배 효율 개선을 확인했습니다.",
+            "[Review & Guardrail]\n기획 보안 규정 준수를 위해 내부 메타데이터와 대외 공개용 리소스의 범위를 사전에 물리적으로 차단하고, Confluence 릴리즈 노트 자동 발행 전 정합성을 PM이 직접 서명 및 확인하는 승인 단계를 설계했습니다.\n\n[Outcome & Impact]\n기획 및 협업 인계 운영체계를 표준화하여 동료 테스트 기준 특정 기획 흐름의 시간비용을 12배 개선 (60분에서 5분으로 단축) 하였으며 개발-기획 정렬율을 높였습니다.",
           metrics: [
             "Jira epic 320개 이상 구조화",
             "검증한 기획 흐름에서 12배 효율 개선",
@@ -261,7 +261,7 @@ export const internalKo: SiteCopy = {
             "근거 기반",
             "하나의 검증된 흐름"
           ],
-          summary: "제품 발견부터 출시, 피드백 루프까지 이어지는 기획 프로세스를 Jira-Confluence 기반의 운영 루틴으로 구조화했습니다.",
+          summary: "여러 도구를 오가며 발생했던 기획 및 릴리즈 정보의 분절을 해결하기 위해 Jira-Confluence를 단일 소스(Single Source of Truth)로 삼는 기획 운영 체계(Product Ops)를 구축했습니다. AI를 오케스트레이션 도구로 삼아 일관성 있는 이니셔티브-기능 매핑 프로세스를 확보하고 협업 오버헤드를 줄였습니다.",
           highlights: [
             "기획 계층, 템플릿, 상태 추적, 릴리스 루틴을 통일된 운영 체계로 설계",
             "PO 변경, 위젯 기반 홈, Contract+AI 등 세부 기능 기획 지원",
@@ -279,11 +279,11 @@ export const internalKo: SiteCopy = {
           title: "GTM 데모 지원과 시장 인사이트",
           category: "Market Intelligence in Gartner, Salesforce, SAMSUNG",
           problem:
-            "글로벌 SaaS 데모 및 주요 애널리스트 평가(IDC MarketScape 2025 S2P/P2P Major Player 및 The Hackett Group 2025-2026 '50 to Know' 선정 제품)에서는 AI S2P/P2P 가치와 벤치마크 성과를 짧고 명확하게 설명해야 합니다. 제품 내러티브, 데모 데이터, 신속한 이슈 대응, 시장 벤치마킹 맥락이 정렬되어야 우수한 평가를 확보할 수 있습니다.",
+            "[Problem Context]\n글로벌 SaaS 데모 및 외부 전문 리서치 기관(IDC, Forrester, Hackett 등) 평가에 효과적으로 대응하기 위해서는 짧은 시간 내에 AI S2P/P2P의 가치와 벤치마크 성과를 신뢰성 있는 데이터와 함께 명확히 증명해야 했습니다.\n\n[Product Judgment]\n모든 기획 기능의 복잡한 동작을 보여주는 무리한 데모 대신, 핵심 비즈니스 내러티브에 정렬된 3대 주요 스토리라인과 9대 보조 시나리오를 정의하여 애널리스트 및 잠재 고객의 의사결정 맥락과 부합시켰습니다.",
           contribution:
-            "시나리오 구조 설계, 데모 환경 및 Storylane형 내러티브 준비, 실시간 이슈 대응을 수행하였고, 주요 글로벌 전문 기관(IDC, Forrester, Hackett 등)의 애널리스트 벤치마킹용 제품 분석 자료와 데모 시연 준비를 총괄 및 지원했습니다. 공개 범위 준수를 위해 고객 대화, 리드 정보 및 비공개 피드백은 포함하지 않았습니다.",
+            "[Planning & Execution]\nStorylane을 활용한 인터랙티브 데모 내러티브 환경을 구성하고, 글로벌 리서치 기관 평가 항목에 대응하는 제품 분석 데이터 자료집을 정비하여 애널리스트 벤치마킹 대응을 총괄 지원했습니다.\n\n[AI Leverage]\nJira 기획 사양서 및 PRD 데이터로부터 애널리스트 질문 답변 및 글로벌 릴리즈노트 스니펫 초안을 다국어로 신속 가공하는 데 AI 스킬(`release-prep`)을 연동해 대응력을 극대화했습니다.",
           outcome:
-            "주요 데모 시나리오 3개와 보조 시나리오 9개를 구축하고, 글로벌 애널리스트 평가에 대응하는 제품 설명 자료를 정비하여 우수한 벤치마크 평가(Major Player 및 50 to Know 등)를 획득하는 데 기여하였으며, 시장 피드백 루프를 수립했습니다.",
+            "[Review & Guardrail]\n글로벌 규격(SOC 2 Type II, ISO/IEC 인증 및 SAP Certified Integration) 준수 여부 및 비공개 고객 피드백이 노출되지 않도록 가이드라인 필터를 설정하고 데모 데이터 보안 검수를 실행했습니다.\n\n[Outcome & Impact]\n글로벌 전문 리서치 기관 평가에서 Major Player 및 50 to Know 제품 선정을 달성하는 데 기여하고, 100개 이상의 시장 요구 신호를 수집하여 제품 로드맵에 피드백 루프를 수립했습니다.",
           metrics: [
             "시장 정보 수집 활동 3개+",
             "데모 시나리오 9개+",
@@ -432,7 +432,7 @@ export const internalKo: SiteCopy = {
           evidence: "체계적인 백로그 관리 및 지속적 프로세스 개선 루프 구축"
         },
         {
-          tool: "Workflow Orchestration w/ MCP",
+          tool: "MCP 기반 업무 흐름 오케스트레이션",
           capability: "AI 보조 기획, 요구사항 검토, 다국어 번역, 개발 인계, 코드 생성 및 업무 흐름 조율",
           evidence: "Claude, ChatGPT, Antigravity, Cursor, Genspark"
         },

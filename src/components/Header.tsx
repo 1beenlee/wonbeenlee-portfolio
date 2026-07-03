@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Languages, Menu } from "lucide-react";
 import { canonicalProfile } from "../content/profile.shared";
-import type { SiteCopy } from "../content/types";
+import type { NavItem, SiteCopy } from "../content/types";
 import { ThemeToggle } from "./ThemeToggle";
 import { MobileNav } from "./MobileNav";
 
@@ -10,6 +10,7 @@ export function Header({
   languageHref,
   homeHref,
   activeSection,
+  navItems,
   theme,
   onToggleTheme
 }: {
@@ -17,6 +18,7 @@ export function Header({
   languageHref: string;
   homeHref: string;
   activeSection: string;
+  navItems?: NavItem[];
   theme: "teal" | "cobalt";
   onToggleTheme: () => void;
 }) {
@@ -35,7 +37,7 @@ export function Header({
 
         {/* Desktop Navigation */}
         <nav className="nav-links" aria-label={copy.ui.primaryNavigationLabel}>
-          {copy.nav.map((item) => (
+          {(navItems ?? copy.nav).map((item) => (
             <a
               key={item.href}
               href={item.href}
@@ -71,7 +73,7 @@ export function Header({
       <MobileNav
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}
-        copy={copy}
+        copy={navItems ? { ...copy, nav: navItems } : copy}
         languageHref={languageHref}
         activeSection={activeSection}
         theme={theme}
