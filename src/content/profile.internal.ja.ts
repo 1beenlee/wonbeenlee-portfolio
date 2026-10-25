@@ -32,7 +32,7 @@ export const internalJa: SiteCopy = {
       { label: "役割", value: "Global Product Manager" },
       { label: "ドメイン", value: "SRM/S2P SaaS" },
       { label: "担当", value: "AI Leverage + Product Ops" },
-      { label: "ビザ", value: "配偶者ビザ（就労制限なし・ビザスポンサー不要）" }
+      { label: "ビザ", value: "日本人の配偶者等：取得手続き開始予定（未取得）" }
     ]
   },
   sections: {
@@ -548,7 +548,7 @@ export const internalJa: SiteCopy = {
       kicker: "コンタクト",
       title: "業務やネットワーキングに関するご連絡",
       body:
-        "協業、ネットワーキング、採用などに関するご連絡はLinkedInへお願いいたします。GitHubでは公開可能な技術検証コードを公開しています。配偶者ビザを取得しており、就労制限はなくビザスポンサーは不要です。",
+        "協業、ネットワーキング、採用などに関するご連絡はLinkedInへお願いいたします。GitHubでは公開可能な技術検証コードを公開しています。日本人の配偶者との婚姻は日韓両国で届出済みです。日本の在留資格は現在未取得で、COE（在留資格認定証明書）と「日本人の配偶者等」の取得手続きはこれから開始する予定です。",
       links: [
         {
           label: "LinkedIn",
